@@ -3,89 +3,144 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 30px 0;
+  padding: 25px 0;
   z-index: 1;
-  transition: 0.2s ease-out;
+  transition: 0.3s ease-out;
   transition-property: opacity, transform, padding;
 
   &__inner {
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 30px;
     z-index: 2;
+    font-size: 25px;
 
+    &-group {
+      display: flex;
+      align-items: center;
+      gap: 0.8em;
+    }
+    .button {
+      &--primary {
+        border: 1px solid $white;
+      }
+    }
+    .logo {
+      font-size: inherit;
+    }
     .burger {
       display: none;
     }
   }
+  &:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $gradient;
+    opacity: 0;
+    transition: 0.3s ease-out;
+  }
+  &:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $black-bg;
+    opacity: 0;
+    transition: 0.15s ease-out;
+  }
 
   &.sticky {
     position: fixed;
-    padding: 20px 0;
-    border-bottom: 1px solid rgba($secondary, 0.4);
-    animation: 0.3s sticky ease-in;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba($white, 0.4);
     transition-duration: 0.5s;
-  }
-}
-.nav {
-  flex-grow: 1;
-  &__inner {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    &-group {
-      display: flex;
-      align-items: center;
+    backdrop-filter: blur(8px);
+
+    &:after {
+      opacity: 0.2;
     }
-    &-link {
-      position: relative;
-      display: flex;
-      align-items: center;
-      padding: 8px 20px;
-      //font
-      color: $white;
-      font-family: $font-primary;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 1;
-      transition: 0.3s ease-out;
+    &:before {
+      opacity: 0.8;
+    }
+    .header__inner {
+      font-size: 22px;
 
-      &._sm {
-        padding: 5px 10px;
-      }
-      svg {
-        width: 1.5em;
-        height: 1.5em;
-        margin-right: 0.7em;
-      }
-      &:after {
-        content: "";
-        display: block;
-        position: absolute;
-        bottom: -3px;
-        left: 50%;
-        height: 0;
-        width: 60%;
-        background: $primary;
-        opacity: 0;
-        transition: 0.3s ease-out;
-        transform: translateX(-50%);
-      }
-      &:hover {
-        color: $primary;
-
-        &:after {
-          opacity: 1;
-          height: 2px;
-          width: 80%;
-        }
+      .button {
+        font-size: 1.04em;
       }
     }
   }
+
+  & + section {
+    margin-top: 105px;
+  }
 }
+// .nav {
+//   flex-grow: 1;
+//   &__inner {
+//     display: flex;
+//     width: 100%;
+//     align-items: center;
+//     justify-content: space-between;
+//     &-group {
+//       display: flex;
+//       align-items: center;
+//     }
+//     &-link {
+//       position: relative;
+//       display: flex;
+//       align-items: center;
+//       padding: 8px 20px;
+//       //font
+//       color: $white;
+//       font-family: $font-primary;
+//       font-style: normal;
+//       font-weight: 400;
+//       font-size: 16px;
+//       line-height: 1;
+//       transition: 0.3s ease-out;
+
+//       &._sm {
+//         padding: 5px 10px;
+//       }
+//       svg {
+//         width: 1.5em;
+//         height: 1.5em;
+//         margin-right: 0.7em;
+//       }
+//       &:after {
+//         content: "";
+//         display: block;
+//         position: absolute;
+//         bottom: -3px;
+//         left: 50%;
+//         height: 0;
+//         width: 60%;
+//         background: $primary;
+//         opacity: 0;
+//         transition: 0.3s ease-out;
+//         transform: translateX(-50%);
+//       }
+//       &:hover {
+//         color: $primary;
+
+//         &:after {
+//           opacity: 1;
+//           height: 2px;
+//           width: 80%;
+//         }
+//       }
+//     }
+//   }
+// }
 .burger {
   cursor: pointer;
   display: block;
@@ -164,82 +219,118 @@
       }
     }
   }
-  .nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba($black, 0.4);
-    backdrop-filter: blur(4px);
-    z-index: 0;
-    transform: translate(100%);
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0s ease 0.25s, opacity 0.2s ease-in-out 0s;
+  // .nav {
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   background: rgba($black, 0.4);
+  //   backdrop-filter: blur(4px);
+  //   z-index: 0;
+  //   transform: translate(100%);
+  //   opacity: 0;
+  //   pointer-events: none;
+  //   transition: all 0s ease 0.25s, opacity 0.2s ease-in-out 0s;
 
+  //   &__inner {
+  //     position: absolute;
+  //     top: 0;
+  //     left: 0;
+  //     width: 35%;
+  //     min-width: 280px;
+  //     height: 100%;
+  //     flex-direction: column;
+  //     align-items: flex-start;
+  //     justify-content: flex-start;
+  //     box-sizing: border-box;
+  //     background: $white;
+  //     box-shadow: 0px 4px 24px -1px rgba($black, 0.2);
+  //     padding: 50px 25px;
+  //     transform: translate(-100%);
+  //     opacity: 0;
+  //     transition: 0.15s ease-in-out 0s;
+
+  //     &-group {
+  //       flex-direction: column;
+  //       align-items: flex-start;
+  //       padding: 25px 0;
+  //       gap: 8px;
+  //       color: $black;
+  //       border-top: 1px solid $white;
+  //       width: 100%;
+
+  //       &:first-child {
+  //         border: 0;
+  //       }
+  //     }
+  //     &-link {
+  //       color: $black;
+
+  //       &:after {
+  //         left: 0;
+  //         top: 50%;
+  //         width: 2px;
+  //         height: 80%;
+  //         transform: translateY(-50%);
+  //       }
+
+  //       &:hover {
+  //         color: $secondary;
+  //         &:after {
+  //           width: 2px;
+  //           height: 100%;
+  //         }
+  //       }
+  //     }
+  //   }
+
+  //   &.active {
+  //     pointer-events: all;
+  //     transform: translate(0);
+  //     opacity: 1;
+  //     transition: opacity 0.3s ease-in-out;
+
+  //     .nav__inner {
+  //       opacity: 1;
+  //       transition: 0.3s ease-in-out 0.05s;
+  //       transform: translate(0);
+  //     }
+  //   }
+  // }
+}
+
+@mixin header-768 {
+  .header {
     &__inner {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 35%;
-      min-width: 280px;
-      height: 100%;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-      box-sizing: border-box;
-      background: $white;
-      box-shadow: 0px 4px 24px -1px rgba($black, 0.2);
-      padding: 50px 25px;
-      transform: translate(-100%);
-      opacity: 0;
-      transition: 0.15s ease-in-out 0s;
+      font-size: 20px;
 
       &-group {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 25px 0;
         gap: 8px;
-        color: $black;
-        border-top: 1px solid $white;
-        width: 100%;
-
-        &:first-child {
-          border: 0;
-        }
       }
-      &-link {
-        color: $black;
-
-        &:after {
-          left: 0;
-          top: 50%;
-          width: 2px;
-          height: 80%;
-          transform: translateY(-50%);
-        }
-
-        &:hover {
-          color: $secondary;
-          &:after {
-            width: 2px;
-            height: 100%;
-          }
+    }
+    &.sticky {
+      .header__inner {
+        font-size: 16px;
+        .button {
+          font-size: 0.8em;
         }
       }
     }
+  }
+}
 
-    &.active {
-      pointer-events: all;
-      transform: translate(0);
-      opacity: 1;
-      transition: opacity 0.3s ease-in-out;
-
-      .nav__inner {
-        opacity: 1;
-        transition: 0.3s ease-in-out 0.05s;
-        transform: translate(0);
+@mixin header-460 {
+  .header {
+    &__inner {
+      font-size: 18px;
+    }
+    &.sticky {
+      .header__inner {
+        font-size: 12px;
+        .button {
+          font-size: 1em;
+        }
       }
     }
   }

@@ -56,6 +56,14 @@
     transform: translateY(0);
   }
 }
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .animInUp {
   -webkit-animation-name: animInUp;
   animation-name: animInUp;
