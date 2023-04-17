@@ -19,7 +19,7 @@
       max-width: 500px;
       border-radius: 0 70px 0 70px;
 
-      &:after {
+      span {
         position: absolute;
         content: "";
         top: 0;
@@ -349,9 +349,14 @@
         &-group {
           margin: 35px auto 0 auto;
         }
+        h1 {
+          margin-bottom: 1.5em;
+        }
       }
       &-banner {
-        position: unset;
+        position: relative;
+        top: unset;
+        left: unset;
         height: unset;
         width: 100%;
         margin: 0 auto 35px auto;
@@ -384,6 +389,15 @@
 }
 
 @mixin index-768 {
+  .hero__inner {
+    &-banner {
+      border-radius: 0 50px 0 50px;
+
+      span {
+        transform: translate(-20px, -20px);
+      }
+    }
+  }
   .note {
     &__inner {
       flex-direction: column;
@@ -429,6 +443,14 @@
   }
 }
 @mixin index-580 {
+  .hero__inner {
+    &-banner {
+      span {
+        transform: translate(-10px, -15px);
+        border-width: 3px;
+      }
+    }
+  }
   .nft {
     &__inner {
       &-header {

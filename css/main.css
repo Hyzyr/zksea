@@ -780,7 +780,7 @@ li {
   max-width: 500px;
   border-radius: 0 70px 0 70px;
 }
-.hero__inner-banner:after {
+.hero__inner-banner span {
   position: absolute;
   content: "";
   top: 0;
@@ -1242,8 +1242,13 @@ li {
   .hero__inner-content-group {
     margin: 35px auto 0 auto;
   }
+  .hero__inner-content h1 {
+    margin-bottom: 1.5em;
+  }
   .hero__inner-banner {
-    position: unset;
+    position: relative;
+    top: unset;
+    left: unset;
     height: unset;
     width: 100%;
     margin: 0 auto 35px auto;
@@ -1327,6 +1332,13 @@ li {
   .header.sticky .header__inner .button {
     font-size: 0.8em;
   }
+  .hero__inner-banner {
+    border-radius: 0 50px 0 50px;
+  }
+  .hero__inner-banner span {
+    -webkit-transform: translate(-20px, -20px);
+            transform: translate(-20px, -20px);
+  }
   .note__inner {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1381,6 +1393,11 @@ li {
   }
   p.xlg {
     font-size: 18px;
+  }
+  .hero__inner-banner span {
+    -webkit-transform: translate(-10px, -15px);
+            transform: translate(-10px, -15px);
+    border-width: 3px;
   }
   .nft__inner-header h3 {
     width: 100%;
