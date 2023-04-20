@@ -568,8 +568,10 @@ li {
   line-height: inherit;
   -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
+  padding: 0.2em 0.4em;
 }
 .link--inline:hover {
+  color: #fff;
   opacity: 0.8;
   text-decoration: underline;
 }
@@ -822,9 +824,7 @@ li {
   line-height: 1.4;
 }
 .hero__inner-content p {
-  font-size: 22px;
   margin-bottom: 0.5em;
-  font-family: "Nexa";
   font-style: normal;
   font-weight: 400;
   font-size: 22px;
