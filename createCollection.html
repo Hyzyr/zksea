@@ -11,84 +11,91 @@
 
 <body>
   <div class="main">
+
     <!-- #header -->
     <header class="header" id="header">
       <div class="autoContainer">
         <div class="header__inner">
-          <a href="#" class="header__inner-logo">
+          <a href="./index.html" class="header__inner-logo">
             <img src="./images/icons/logo.svg" alt="">
           </a>
-          <nav class="nav">
+          <nav class="nav" id="menu">
             <div class="nav__inner">
               <div class="nav__inner-links">
-                <a href="#">NFTs</a>
-                <a href="#">My NFTs</a>
-                <a href="#">Create</a>
-                <a href="#">Collections</a>
+                <a href="./index.html">NFTs</a>
+                <a href="./nfts.html">My NFTs</a>
+                <a href="./createCollection.html" class="active">Create</a>
+                <a href="./myNfts.html">Collections</a>
                 <a href="#">My collection</a>
               </div>
-            </div>
-          </nav>
-          <div class="header__inner-buttons">
-            <div class="dropdown">
-              <div class="dropdown__button">
-                <span>
-                  <img src="./images/icons/starkNet.svg" alt="">
-                </span>
-                StarkNet
-                <span class="arrow">
-                  <img src="./images/icons/arrow-down.svg" alt="">
-                </span>
-              </div>
-              <div class="dropdown__content">
-                <div class="dropdown__content-item">
-                  <p>
-                    <span>
-                      <img src="./images/icons/zkSync.svg" alt="">
-                    </span>
-                    zkSync Era
-                  </p>
-                  <p>
+              <div class="nav__inner-buttons">
+                <div class="dropdown">
+                  <div class="dropdown__button">
                     <span>
                       <img src="./images/icons/starkNet.svg" alt="">
                     </span>
                     StarkNet
-                  </p>
-                  <p>
-                    <span>
-                      <img src="./images/icons/starkNet.svg" alt="">
+                    <span class="arrow">
+                      <img src="./images/icons/arrow-down.svg" alt="">
                     </span>
-                    StarkNet Testnet
-                  </p>
-                  <p>
-                    <span>
-                      <img src="./images/icons/zkSync.svg" alt="">
-                    </span>
-                    ZkSync Era Testnet
-                  </p>
-                  <p>
-                    <span>
-                      <img src="./images/icons/blockChain.svg" alt="">
-                    </span>
-                    BlockChain
-                  </p>
+                  </div>
+                  <div class="dropdown__content">
+                    <div class="dropdown__content-item">
+                      <p>
+                        <span>
+                          <img src="./images/icons/zkSync.svg" alt="">
+                        </span>
+                        zkSync Era
+                      </p>
+                      <p>
+                        <span>
+                          <img src="./images/icons/starkNet.svg" alt="">
+                        </span>
+                        StarkNet
+                      </p>
+                      <p>
+                        <span>
+                          <img src="./images/icons/starkNet.svg" alt="">
+                        </span>
+                        StarkNet Testnet
+                      </p>
+                      <p>
+                        <span>
+                          <img src="./images/icons/zkSync.svg" alt="">
+                        </span>
+                        ZkSync Era Testnet
+                      </p>
+                      <p>
+                        <span>
+                          <img src="./images/icons/blockChain.svg" alt="">
+                        </span>
+                        BlockChain
+                      </p>
+                    </div>
+                  </div>
                 </div>
+                <button class="button--primary">
+                  Connect Wallet
+                </button>
               </div>
             </div>
-            <button class="button--primary">
-              Connect Wallet
-            </button>
+          </nav>
+          <div class="burger" id="menuBtn">
+            <span></span>
           </div>
         </div>
       </div>
     </header>
     <!-- #header end -->
+
     <!-- #collection start -->
     <section class="creatCollection">
       <div class="autoContainer">
         <div class="creatCollection__inner">
           <div class="creatCollection__inner-image">
-            <img src="./images/cartProduct.png" alt="">
+            <div class="ratioImage">
+              <img src="./images/cartProduct.png" alt="">
+            </div>
           </div>
           <form class="creatCollection__inner-form">
             <div class="form__buttons">
@@ -96,7 +103,9 @@
                 Create Collection
               </button>
               <button class="button--border">
-                Collection Details
+                <span>
+                  Collection Details
+                </span>
               </button>
             </div>
             <div class="form__file">
@@ -126,6 +135,14 @@
       </div>
     </section>
     <!-- #collection end -->
+
+    <!-- #bubles start -->
+    <div class="bubles">
+      <div class="middleLeftUp blur">
+      </div>
+    </div>
+    <!-- #bubles end -->
+
   </div>
   <script src="js/main.js"></script>
 </body>
