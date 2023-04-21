@@ -18,7 +18,7 @@
           <a href="#" class="header__inner-logo">
             <img src="./images/icons/logo.svg" alt="">
           </a>
-          <nav class="nav">
+          <nav class="nav" id="menu">
             <div class="nav__inner">
               <div class="nav__inner-links">
                 <a href="#">NFTs</a>
@@ -27,57 +27,60 @@
                 <a href="#">Collections</a>
                 <a href="#">My collection</a>
               </div>
-            </div>
-          </nav>
-          <div class="header__inner-buttons">
-            <div class="dropdown">
-              <div class="dropdown__button">
-                <span>
-                  <img src="./images/icons/starkNet.svg" alt="">
-                </span>
-                StarkNet
-                <span class="arrow">
-                  <img src="./images/icons/arrow-down.svg" alt="">
-                </span>
-              </div>
-              <div class="dropdown__content">
-                <div class="dropdown__content-item">
-                  <p>
-                    <span>
-                      <img src="./images/icons/zkSync.svg" alt="">
-                    </span>
-                    zkSync Era
-                  </p>
-                  <p>
+              <div class="nav__inner-buttons">
+                <div class="dropdown">
+                  <div class="dropdown__button">
                     <span>
                       <img src="./images/icons/starkNet.svg" alt="">
                     </span>
                     StarkNet
-                  </p>
-                  <p>
-                    <span>
-                      <img src="./images/icons/starkNet.svg" alt="">
+                    <span class="arrow">
+                      <img src="./images/icons/arrow-down.svg" alt="">
                     </span>
-                    StarkNet Testnet
-                  </p>
-                  <p>
-                    <span>
-                      <img src="./images/icons/zkSync.svg" alt="">
-                    </span>
-                    ZkSync Era Testnet
-                  </p>
-                  <p>
-                    <span>
-                      <img src="./images/icons/blockChain.svg" alt="">
-                    </span>
-                    BlockChain
-                  </p>
+                  </div>
+                  <div class="dropdown__content">
+                    <div class="dropdown__content-item">
+                      <p>
+                        <span>
+                          <img src="./images/icons/zkSync.svg" alt="">
+                        </span>
+                        zkSync Era
+                      </p>
+                      <p>
+                        <span>
+                          <img src="./images/icons/starkNet.svg" alt="">
+                        </span>
+                        StarkNet
+                      </p>
+                      <p>
+                        <span>
+                          <img src="./images/icons/starkNet.svg" alt="">
+                        </span>
+                        StarkNet Testnet
+                      </p>
+                      <p>
+                        <span>
+                          <img src="./images/icons/zkSync.svg" alt="">
+                        </span>
+                        ZkSync Era Testnet
+                      </p>
+                      <p>
+                        <span>
+                          <img src="./images/icons/blockChain.svg" alt="">
+                        </span>
+                        BlockChain
+                      </p>
+                    </div>
+                  </div>
                 </div>
+                <button class="button--primary">
+                  Connect Wallet
+                </button>
               </div>
             </div>
-            <button class="button--primary">
-              Connect Wallet
-            </button>
+          </nav>
+          <div class="burger" id="menuBtn">
+            <span></span>
           </div>
         </div>
       </div>
@@ -89,7 +92,9 @@
       <div class="autoContainer">
         <div class="productInfo__inner">
           <div class="productInfo__inner-image">
-            <img src="./images/prodoctInfo.png" alt="">
+            <div class="ratioImage">
+              <img src="./images/prodoctInfo.png" alt="">
+            </div>
           </div>
           <div class="productInfo__inner-details">
             <div class="productInfo__inner-details-text">
@@ -104,7 +109,6 @@
               </p>
             </div>
             <div class="productInfo__inner-details-wrapper">
-
               <div class="productInfo__inner-details-items">
                 <div class="productInfoItem">
                   <h6>
@@ -172,14 +176,20 @@
               </div>
               <div class="productInfo__inner-details-social">
                 <div class="productInfoSocials">
-                  <a href="#">
-                    <img src="./images/icons//discord 1.svg" alt="">
+                  <a href="#" class="button--social">
+                    <svg>
+                      <use xlink:href="#discord"></use>
+                    </svg>
                   </a>
-                  <a href="#">
-                    <img src="./images/icons/twitter.svg" alt="">
+                  <a href="#" class="button--social">
+                    <svg>
+                      <use xlink:href="#twitter"></use>
+                    </svg>
                   </a>
-                  <a href="#">
-                    <img src="./images/icons/globus.svg" alt="">
+                  <a href="#" class="button--social">
+                    <svg>
+                      <use xlink:href="#globus"></use>
+                    </svg>
                   </a>
                   <a href="#" class="productInfoSocials__button">
                     <span>
@@ -189,8 +199,10 @@
                       Watch
                     </p>
                   </a>
-                  <a href="#">
-                    <img src="./images/icons/more.svg" alt="">
+                  <a href="#" class="button--social">
+                    <svg>
+                      <use xlink:href="#more"></use>
+                    </svg>
                   </a>
                 </div>
                 <h6>
@@ -233,22 +245,31 @@
           </div>
           <div class="controls__inner-tools">
             <div class="controls__inner-tools-search">
-              <button>
-                <img src="./images/icons/filter.svg" alt="">
+              <button class="button--tool">
+                <svg class="stroke">
+                  <use xlink:href="#filter">
+                    <use />
+                </svg>
               </button>
-              <button>
-                <img src="./images/icons/refresh.svg" alt="">
+              <button class="button--tool">
+                <svg>
+                  <use xlink:href="#refresh">
+                    <use />
+                </svg>
               </button>
-              <div class="search">
+              <button class="button--search">
                 <input type="text" placeholder="Search items">
                 <span>
-                  <img src="./images/icons/search.svg" alt="">
+                  <svg>
+                    <use xlink:href="#search">
+                      <use />
+                  </svg>
                 </span>
-              </div>
+              </button>
             </div>
             <div class="controls__inner-tools-filter">
               <div class="dropdown bg">
-                <div class="dropdown__button asd">
+                <div class="dropdown__button ">
                   Price: Low to High
                   <span class="arrow">
                     <img src="./images/icons/arrow-down.svg" alt="">
@@ -256,8 +277,8 @@
                 </div>
                 <div class="dropdown__content">
                   <div class="dropdown__content-item">
-                    <button>
-                      <input type="checkbox" id="price-1" checked>
+                    <div class="input--radio">
+                      <input type="radio" value="price-1" name="dropdown-1" checked>
                       <label class="tick" for="price-1">
                         <span class="checkbox__text">
                           <img src="./images/icons/tick-circle.svg" alt="">
@@ -266,9 +287,9 @@
                           Price: Low to High
                         </p>
                       </label>
-                    </button>
-                    <button>
-                      <input type="checkbox" id="price-2">
+                    </div>
+                    <div class="input--radio">
+                      <input type="radio" value="price-2" name="dropdown-1">
                       <label class="tick" for="price-2">
                         <span class="checkbox__text">
                           <img src="./images/icons/tick-circle.svg" alt="">
@@ -277,9 +298,9 @@
                           Price: Low to High
                         </p>
                       </label>
-                    </button>
-                    <button>
-                      <input type="checkbox" id="price-3">
+                    </div>
+                    <div class="input--radio">
+                      <input type="radio" value="price-3" name="dropdown-1">
                       <label class="tick" for="price-3">
                         <span class="checkbox__text">
                           <img src="./images/icons/tick-circle.svg" alt="">
@@ -288,7 +309,7 @@
                           Price: Low to High
                         </p>
                       </label>
-                    </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -301,8 +322,8 @@
                 </div>
                 <div class="dropdown__content">
                   <div class="dropdown__content-item">
-                    <button>
-                      <input type="checkbox" id="price-4" checked>
+                    <div class="input--radio">
+                      <input type="radio" value="price-4" name="dropdown-2" checked>
                       <label class="tick" for="price-4">
                         <span class="checkbox__text">
                           <img src="./images/icons/tick-circle.svg" alt="">
@@ -311,9 +332,9 @@
                           Price: Low to High
                         </p>
                       </label>
-                    </button>
-                    <button>
-                      <input type="checkbox" id="price-5">
+                    </div>
+                    <div class="input--radio">
+                      <input type="radio" value="price-5" name="dropdown-2">
                       <label class="tick" for="price-5">
                         <span class="checkbox__text">
                           <img src="./images/icons/tick-circle.svg" alt="">
@@ -322,9 +343,9 @@
                           Price: Low to High
                         </p>
                       </label>
-                    </button>
-                    <button>
-                      <input type="checkbox" id="price-6">
+                    </div>
+                    <div class="input--radio">
+                      <input type="radio" value="price-6" name="dropdown-2">
                       <label class="tick" for="price-6">
                         <span class="checkbox__text">
                           <img src="./images/icons/tick-circle.svg" alt="">
@@ -333,15 +354,20 @@
                           Price: Low to High
                         </p>
                       </label>
-                    </button>
+                    </div>
+
                   </div>
                 </div>
               </div>
-              <button class="fliterButton">
-                <img src="./images/icons/filterIcon1.svg" alt="">
+              <button class="button--tool filter">
+                <svg>
+                  <use xlink:href="#filter1"></use>
+                </svg>
               </button>
-              <button class="fliterButton ">
-                <img src="./images/icons/filterIcon2.svg" alt="">
+              <button class="button--tool filter active">
+                <svg>
+                  <use xlink:href="#filter2"></use>
+                </svg>
               </button>
             </div>
           </div>
@@ -380,9 +406,45 @@
                     <img src="./images/icons/crown.svg" alt="">
                   </span>
                 </div>
-                  <button class="button--border">
+                <button class="button--border">
+                  <span>
                     Details
-                  </button>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="cartProduct">
+            <div class="cartProduct__image">
+              <img src="./images/cartProduct.png" alt="">
+            </div>
+            <div class="cartProduct__info">
+              <h6>
+                Doodle Soda
+                <small>
+                  Doodle Soda
+                </small>
+              </h6>
+              <div class="cartProduct__info-text">
+                <div class="cartProduct__info-text-icons">
+                  <span>
+                    <img src="./images/icons/solana.svg" alt="">
+                  </span>
+                  <p>
+                    0.5
+                  </p>
+                  <span>
+                    <img src="./images/icons/info-circle.svg" alt="">
+                  </span>
+                  <span>
+                    <img src="./images/icons/crown.svg" alt="">
+                  </span>
+                </div>
+                <button class="button--border">
+                  <span>
+                    Details
+                  </span>
+                </button>
               </div>
             </div>
 
@@ -413,9 +475,11 @@
                     <img src="./images/icons/crown.svg" alt="">
                   </span>
                 </div>
-                  <button class="button--border">
+                <button class="button--border">
+                  <span>
                     Details
-                  </button>
+                  </span>
+                </button>
               </div>
             </div>
 
@@ -446,9 +510,11 @@
                     <img src="./images/icons/crown.svg" alt="">
                   </span>
                 </div>
-                  <button class="button--border">
+                <button class="button--border">
+                  <span>
                     Details
-                  </button>
+                  </span>
+                </button>
               </div>
             </div>
 
@@ -479,9 +545,11 @@
                     <img src="./images/icons/crown.svg" alt="">
                   </span>
                 </div>
-                  <button class="button--border">
+                <button class="button--border">
+                  <span>
                     Details
-                  </button>
+                  </span>
+                </button>
               </div>
             </div>
 
@@ -512,9 +580,11 @@
                     <img src="./images/icons/crown.svg" alt="">
                   </span>
                 </div>
-                  <button class="button--border">
+                <button class="button--border">
+                  <span>
                     Details
-                  </button>
+                  </span>
+                </button>
               </div>
             </div>
 
@@ -545,9 +615,11 @@
                     <img src="./images/icons/crown.svg" alt="">
                   </span>
                 </div>
-                  <button class="button--border">
+                <button class="button--border">
+                  <span>
                     Details
-                  </button>
+                  </span>
+                </button>
               </div>
             </div>
 
@@ -578,9 +650,11 @@
                     <img src="./images/icons/crown.svg" alt="">
                   </span>
                 </div>
-                  <button class="button--border">
+                <button class="button--border">
+                  <span>
                     Details
-                  </button>
+                  </span>
+                </button>
               </div>
             </div>
 
@@ -611,9 +685,11 @@
                     <img src="./images/icons/crown.svg" alt="">
                   </span>
                 </div>
-                  <button class="button--border">
+                <button class="button--border">
+                  <span>
                     Details
-                  </button>
+                  </span>
+                </button>
               </div>
             </div>
 
@@ -644,42 +720,11 @@
                     <img src="./images/icons/crown.svg" alt="">
                   </span>
                 </div>
-                  <button class="button--border">
+                <button class="button--border">
+                  <span>
                     Details
-                  </button>
-              </div>
-            </div>
-
-          </div>
-          <div class="cartProduct">
-            <div class="cartProduct__image">
-              <img src="./images/cartProduct.png" alt="">
-            </div>
-            <div class="cartProduct__info">
-              <h6>
-                Doodle Soda
-                <small>
-                  Doodle Soda
-                </small>
-              </h6>
-              <div class="cartProduct__info-text">
-                <div class="cartProduct__info-text-icons">
-                  <span>
-                    <img src="./images/icons/solana.svg" alt="">
                   </span>
-                  <p>
-                    0.5
-                  </p>
-                  <span>
-                    <img src="./images/icons/info-circle.svg" alt="">
-                  </span>
-                  <span>
-                    <img src="./images/icons/crown.svg" alt="">
-                  </span>
-                </div>
-                  <button class="button--border">
-                    Details
-                  </button>
+                </button>
               </div>
             </div>
 
@@ -689,9 +734,117 @@
     </section>
     <!-- #grid end -->
 
+    <!-- #bubles start -->
+    <div class="bubles" >
+      <div class="top blur">
+      </div>
+      <div class="middleLeft blur">
+      </div>
+      <div class="middleLeftBottom blur">
+      </div>
+      <div class="middleRigh blur">
+      </div>
+    </div>
+    <!-- #bubles end -->
+
 
   </div>
+  <!-- #js start -->
   <script src="js/main.js"></script>
+  <!-- #svg start -->
+  <svg style="display: none">
+    <symbol id="discord" viewBox="0 0 20 20">
+      <g>
+        <path
+          d="M14.8516 5.54901C13.9593 5.13959 13.0024 4.83794 12.002 4.66515C11.9837 4.66182 11.9655 4.67016 11.9562 4.68681C11.8331 4.9057 11.6968 5.19122 11.6013 5.41566C10.5253 5.25455 9.4547 5.25455 8.40071 5.41566C8.30522 5.18624 8.16397 4.9057 8.04035 4.68681C8.03097 4.6707 8.01276 4.66236 7.99454 4.66515C6.99464 4.83736 6.03777 5.13902 5.14489 5.54901C5.13715 5.55235 5.13053 5.5579 5.12613 5.56512C3.31116 8.27666 2.81395 10.9216 3.05785 13.5337C3.05895 13.5464 3.06614 13.5586 3.07606 13.5664C4.27353 14.4458 5.4335 14.9797 6.5719 15.3336C6.59012 15.3391 6.60942 15.3325 6.62101 15.3175C6.8903 14.9497 7.13035 14.562 7.33616 14.1542C7.3483 14.1303 7.33671 14.102 7.31188 14.0925C6.93112 13.9481 6.56857 13.772 6.2198 13.572C6.19221 13.5559 6.19 13.5165 6.2154 13.4976C6.28879 13.4426 6.36221 13.3853 6.43229 13.3276C6.44498 13.317 6.46264 13.3148 6.47754 13.3214C8.76873 14.3675 11.2492 14.3675 13.5134 13.3214C13.5283 13.3142 13.5459 13.3165 13.5592 13.327C13.6293 13.3848 13.7027 13.4425 13.7766 13.4975C13.802 13.5164 13.8003 13.5559 13.7727 13.572C13.424 13.7759 13.0614 13.9481 12.6801 14.092C12.6553 14.1014 12.6442 14.1303 12.6564 14.1542C12.8667 14.5614 13.1067 14.9491 13.371 15.3169C13.3821 15.3325 13.4019 15.3391 13.4201 15.3336C14.564 14.9797 15.724 14.4458 16.9215 13.5664C16.932 13.5586 16.9386 13.547 16.9397 13.5342C17.2316 10.5143 16.4508 7.89111 14.8698 5.56566C14.8659 5.5579 14.8593 5.55235 14.8516 5.54901ZM7.67837 11.9432C6.98857 11.9432 6.42017 11.3099 6.42017 10.5321C6.42017 9.75437 6.97752 9.12106 7.67837 9.12106C8.38469 9.12106 8.94758 9.75992 8.93654 10.5321C8.93654 11.3099 8.37916 11.9432 7.67837 11.9432ZM12.3303 11.9432C11.6405 11.9432 11.0721 11.3099 11.0721 10.5321C11.0721 9.75437 11.6295 9.12106 12.3303 9.12106C13.0366 9.12106 13.5995 9.75992 13.5885 10.5321C13.5885 11.3099 13.0366 11.9432 12.3303 11.9432Z" />
+      </g>
+    </symbol>
+    <symbol id="twitter" viewBox="0 0 20 20">
+      <g>
+        <path
+          d="M17 5.42062C16.4794 5.66154 15.9246 5.82123 15.3462 5.89877C15.9412 5.524 16.3954 4.93508 16.6089 4.22523C16.0541 4.57415 15.4416 4.82062 14.7889 4.95815C14.2621 4.36646 13.5114 4 12.6924 4C11.1034 4 9.82412 5.36062 9.82412 7.02862C9.82412 7.26862 9.84338 7.49938 9.89062 7.71908C7.5045 7.59631 5.39313 6.38985 3.97475 4.552C3.72712 5.00523 3.58188 5.524 3.58188 6.08246C3.58188 7.13108 4.09375 8.06062 4.85675 8.59877C4.39562 8.58954 3.94325 8.44831 3.56 8.22585C3.56 8.23508 3.56 8.24708 3.56 8.25908C3.56 9.73046 4.55487 10.9526 5.8595 11.2342C5.62587 11.3015 5.37125 11.3338 5.107 11.3338C4.92325 11.3338 4.73775 11.3228 4.56362 11.2822C4.9355 12.4812 5.99075 13.3628 7.2455 13.3914C6.269 14.1972 5.02912 14.6828 3.68688 14.6828C3.4515 14.6828 3.22575 14.6717 3 14.6412C4.27137 15.5062 5.77813 16 7.403 16C12.6845 16 15.572 11.3846 15.572 7.384C15.572 7.25015 15.5676 7.12092 15.5615 6.99262C16.1311 6.56615 16.6097 6.03354 17 5.42062Z" />
+      </g>
+    </symbol>
+    <symbol id="globus" viewBox="0 0 20 20">
+      <g>
+        <path
+          d="M12.5135 7.1284C12.0211 4.78326 10.9711 3.2996 9.99988 3.2996C9.0287 3.2996 7.97864 4.78326 7.48628 7.1284H12.5135Z" />
+        <path
+          d="M7.19973 10C7.19962 10.6403 7.24125 11.2798 7.32434 11.9144H12.6754C12.7585 11.2798 12.8001 10.6403 12.8 10C12.8001 9.35973 12.7585 8.72017 12.6754 8.0856H7.32434C7.24125 8.72017 7.19962 9.35973 7.19973 10Z" />
+        <path
+          d="M7.48628 12.8716C7.97864 15.2167 9.0287 16.7004 9.99988 16.7004C10.9711 16.7004 12.0211 15.2167 12.5135 12.8716H7.48628Z" />
+        <path
+          d="M13.4693 7.1284H16.4094C15.9677 6.09738 15.2964 5.18689 14.4496 4.46994C13.6027 3.75299 12.6038 3.24955 11.533 3C12.4183 3.79878 13.1127 5.27574 13.4693 7.1284Z" />
+        <path
+          d="M16.745 8.0856H13.6181C13.6951 8.72068 13.7336 9.36004 13.7334 10C13.7335 10.64 13.6948 11.2793 13.6177 11.9144H16.7445C17.0849 10.662 17.0853 9.338 16.745 8.0856Z" />
+        <path
+          d="M11.533 17C12.604 16.7506 13.6031 16.2472 14.4501 15.5303C15.2971 14.8133 15.9685 13.9027 16.4104 12.8716H13.4702C13.1127 14.7243 12.4183 16.2012 11.533 17Z" />
+        <path
+          d="M6.5305 12.8716H3.59034C4.0322 13.9027 4.70358 14.8133 5.5506 15.5303C6.39763 16.2472 7.39673 16.7506 8.46774 17C7.58149 16.2012 6.88705 14.7243 6.5305 12.8716Z" />
+        <path
+          d="M8.4668 3C7.39579 3.24942 6.3967 3.7528 5.54967 4.46975C4.70264 5.18671 4.03127 6.09727 3.58941 7.1284H6.52957C6.88705 5.27574 7.58149 3.79878 8.4668 3Z" />
+        <path
+          d="M6.26635 10C6.26629 9.36003 6.30495 8.72067 6.38209 8.0856H3.25526C2.91491 9.338 2.91491 10.662 3.25526 11.9144H6.38209C6.30495 11.2793 6.26629 10.64 6.26635 10Z" />
+      </g>
+    </symbol>
+    <symbol id="more" viewBox="0 0 20 20">
+      <g>
+        <circle cx="10" cy="6" r="1" />
+        <circle cx="10" cy="10" r="1" />
+        <circle cx="10" cy="14" r="1" />
+      </g>
+    </symbol>
+    <symbol id="refresh" viewBox="0 0 24 24">
+      <g>
+        <path
+          d="M5.36297 11.6667H4.86297H5.36297ZM5.36297 13L5.01333 13.3574C5.20766 13.5475 5.51828 13.5475 5.71262 13.3574L5.36297 13ZM7.07559 12.0241C7.27299 11.831 7.27646 11.5144 7.08336 11.317C6.89026 11.1196 6.57369 11.1161 6.3763 11.3092L7.07559 12.0241ZM4.34965 11.3092C4.15225 11.1161 3.83569 11.1196 3.64258 11.317C3.44948 11.5144 3.45296 11.831 3.65035 12.0241L4.34965 11.3092ZM17.5757 8.46455C17.7218 8.69887 18.0302 8.77039 18.2645 8.62428C18.4989 8.47817 18.5704 8.16978 18.4243 7.93545L17.5757 8.46455ZM12.1778 4.5C8.14836 4.5 4.86297 7.69832 4.86297 11.6667H5.86297C5.86297 8.27122 8.67981 5.5 12.1778 5.5V4.5ZM4.86297 11.6667L4.86297 13H5.86297L5.86297 11.6667H4.86297ZM5.71262 13.3574L7.07559 12.0241L6.3763 11.3092L5.01333 12.6426L5.71262 13.3574ZM5.71262 12.6426L4.34965 11.3092L3.65035 12.0241L5.01333 13.3574L5.71262 12.6426ZM18.4243 7.93545C17.1385 5.87329 14.8199 4.5 12.1778 4.5V5.5C14.4673 5.5 16.4686 6.68889 17.5757 8.46455L18.4243 7.93545Z" />
+        <path
+          d="M18.637 11L18.9867 10.6426C18.7923 10.4525 18.4817 10.4525 18.2874 10.6426L18.637 11ZM16.9244 11.9759C16.727 12.169 16.7235 12.4856 16.9166 12.683C17.1097 12.8804 17.4263 12.8839 17.6237 12.6908L16.9244 11.9759ZM19.6504 12.6908C19.8478 12.8839 20.1643 12.8804 20.3574 12.683C20.5505 12.4856 20.547 12.169 20.3496 11.9759L19.6504 12.6908ZM6.42428 15.5355C6.27817 15.3011 5.96978 15.2296 5.73545 15.3757C5.50113 15.5218 5.42961 15.8302 5.57572 16.0645L6.42428 15.5355ZM11.8222 19.5C15.8516 19.5 19.137 16.3017 19.137 12.3333H18.137C18.137 15.7288 15.3202 18.5 11.8222 18.5V19.5ZM19.137 12.3333V11H18.137V12.3333H19.137ZM18.2874 10.6426L16.9244 11.9759L17.6237 12.6908L18.9867 11.3574L18.2874 10.6426ZM18.2874 11.3574L19.6504 12.6908L20.3496 11.9759L18.9867 10.6426L18.2874 11.3574ZM5.57572 16.0645C6.86152 18.1267 9.18008 19.5 11.8222 19.5V18.5C9.53271 18.5 7.53144 17.3111 6.42428 15.5355L5.57572 16.0645Z" />
+      </g>
+    </symbol>
+    <symbol id="filter" viewBox="0 0 24 24">
+      <g>
+        <path
+          d="M8.15007 6.22498H15.8501C16.4917 6.22498 17.0167 6.74998 17.0167 7.39164V8.67498C17.0167 9.14164 16.7251 9.72498 16.4334 10.0166L13.9251 12.2333C13.5751 12.525 13.3417 13.1083 13.3417 13.575V16.0833C13.3417 16.4333 13.1084 16.9 12.8167 17.075L12.0001 17.6C11.2417 18.0666 10.1917 17.5416 10.1917 16.6083V13.5166C10.1917 13.1083 9.9584 12.5833 9.72507 12.2916L7.5084 9.95831C7.21673 9.66664 6.9834 9.14164 6.9834 8.79164V7.44998C6.9834 6.74998 7.5084 6.22498 8.15007 6.22498Z"
+          stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M11.3758 6.22498L8.5 10.8333" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+    </symbol>
+    <symbol id="search" viewBox="0 0 24 24">
+      <g>
+        <path
+          d="M11.7082 17.6875C8.41234 17.6875 5.729 15.0042 5.729 11.7084C5.729 8.41252 8.41234 5.72919 11.7082 5.72919C15.004 5.72919 17.6873 8.41252 17.6873 11.7084C17.6873 15.0042 15.004 17.6875 11.7082 17.6875ZM11.7082 6.60419C8.89067 6.60419 6.604 8.89669 6.604 11.7084C6.604 14.52 8.89067 16.8125 11.7082 16.8125C14.5257 16.8125 16.8123 14.52 16.8123 11.7084C16.8123 8.89669 14.5257 6.60419 11.7082 6.60419Z" />
+        <path
+          d="M17.8332 18.2709C17.7223 18.2709 17.6115 18.23 17.524 18.1425L16.3573 16.9759C16.1882 16.8067 16.1882 16.5267 16.3573 16.3575C16.5265 16.1884 16.8065 16.1884 16.9757 16.3575L18.1423 17.5242C18.3115 17.6934 18.3115 17.9734 18.1423 18.1425C18.0548 18.23 17.944 18.2709 17.8332 18.2709Z" />
+      </g>
+    </symbol>
+    <symbol id="filter1" viewBox="0 0 24 24">
+      <g>
+        <path d="M8.45817 3.66669V8.50002H3.6665C3.6665 5.49169 5.45817 3.68335 8.45817 3.66669Z" />
+        <path d="M20.3332 8.50002H15.5415V3.66669C18.5415 3.68335 20.3332 5.49169 20.3332 8.50002Z" />
+        <path d="M20.3332 15.5833C20.2998 18.5416 18.5165 20.3166 15.5415 20.3333V15.5833H20.3332Z" />
+        <path d="M8.45817 15.5833V20.3333C5.48317 20.3166 3.69984 18.5416 3.6665 15.5833H8.45817Z" />
+        <path d="M8.45817 9.75H3.6665V14.3333H8.45817V9.75Z" />
+        <path d="M20.3332 9.75H15.5415V14.3333H20.3332V9.75Z" />
+        <path d="M14.2918 9.75H9.7085V14.3333H14.2918V9.75Z" />
+        <path d="M14.2918 3.66669H9.7085V8.50002H14.2918V3.66669Z" />
+        <path d="M14.2918 15.5833H9.7085V20.3333H14.2918V15.5833Z" />
+      </g>
+    </symbol>
+    <symbol id="filter2" viewBox="0 0 24 24">
+      <g>
+        <path
+          d="M20.3333 9.10002V5.31669C20.3333 4.14169 19.8 3.66669 18.475 3.66669H15.1083C13.7833 3.66669 13.25 4.14169 13.25 5.31669V9.09169C13.25 10.275 13.7833 10.7417 15.1083 10.7417H18.475C19.8 10.75 20.3333 10.275 20.3333 9.10002Z" />
+        <path
+          d="M20.3333 18.475V15.1083C20.3333 13.7833 19.8 13.25 18.475 13.25H15.1083C13.7833 13.25 13.25 13.7833 13.25 15.1083V18.475C13.25 19.8 13.7833 20.3333 15.1083 20.3333H18.475C19.8 20.3333 20.3333 19.8 20.3333 18.475Z" />
+        <path
+          d="M10.7498 9.10002V5.31669C10.7498 4.14169 10.2165 3.66669 8.8915 3.66669H5.52484C4.19984 3.66669 3.6665 4.14169 3.6665 5.31669V9.09169C3.6665 10.275 4.19984 10.7417 5.52484 10.7417H8.8915C10.2165 10.75 10.7498 10.275 10.7498 9.10002Z" />
+        <path
+          d="M10.7498 18.475V15.1083C10.7498 13.7833 10.2165 13.25 8.8915 13.25H5.52484C4.19984 13.25 3.6665 13.7833 3.6665 15.1083V18.475C3.6665 19.8 4.19984 20.3333 5.52484 20.3333H8.8915C10.2165 20.3333 10.7498 19.8 10.7498 18.475Z" />
+      </g>
+    </symbol>
+
+  </svg>
 </body>
 
 </html>

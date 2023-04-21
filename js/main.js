@@ -1,23 +1,23 @@
-// var menu = document.getElementById("menu");
-// var menuBtn = document.getElementById("menuBtn");
-// var body = document.body;
+var menu = document.getElementById("menu");
+var menuBtn = document.getElementById("menuBtn");
+var body = document.body;
 
-// const closeMenu = () => {
-//   menu.classList.remove("active");
-//   menuBtn.classList.remove("active");
-//   body.classList.remove("active");
-// };
+const closeMenu = () => {
+  menu.classList.remove("active");
+  menuBtn.classList.remove("active");
+  body.classList.remove("active");
+};
 
-// menuBtn.onclick = function () {
-//   menu.classList.toggle("active");
-//   menuBtn.classList.toggle("active");
-//   body.classList.toggle("active");
-// };
-// window.onclick = function (event) {
-//   if (event.target == menu) {
-//     closeMenu();
-//   }
-// };
+menuBtn.onclick = function () {
+  menu.classList.toggle("active");
+  menuBtn.classList.toggle("active");
+  body.classList.toggle("active");
+};
+window.onclick = function (event) {
+  if (event.target == menu) {
+    closeMenu();
+  }
+};
 
 const header = document.getElementById("header");
 if (header)
@@ -29,43 +29,8 @@ if (header)
     }
   });
 
-///
-///
-/// slick slider
+const from = document.querySelector(".creatCollection__inner-form");
 
-///
-///
-/// tabEvents
-const toggleBody = (isClosed) => {
-  if (isClosed) {
-    document.body.classList.add("active");
-    if (menu) closeMenu();
-  } else {
-    document.body.classList.remove("active");
-  }
-};
-document.querySelectorAll(`[data-event="tabEvent"]`).forEach((eventBtn) => {
-  const tab = document.querySelector(eventBtn.getAttribute("data-tab"));
-  if (tab) {
-    eventBtn.onclick = (e) => {
-      e.preventDefault();
-      tab.classList.toggle("active");
-      toggleBody(tab.classList.contains("active"));
-    };
-    tab.onclick = (e) => {
-      if (e.target === e.currentTarget) {
-        tab.classList.toggle("active");
-        toggleBody(tab.classList.contains("active"));
-      }
-    };
-  }
+from.addEventListener("click", (e) => {
+  e.preventDefault();
 });
-document.querySelectorAll(`[data-toggle]`).forEach((toggleBtn) => {
-  console.log("btn ->");
-  toggleBtn.onclick = () =>
-    toggleBtn.classList.toggle(toggleBtn.getAttribute("data-toggle"));
-});
-///
-///
-///
-
