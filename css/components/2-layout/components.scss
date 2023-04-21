@@ -2,190 +2,258 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  margin-top: 108px;
 }
+
 .autoContainer {
-  max-width: 1235px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 1230px;
   padding: 0 60px;
+  margin: 0 auto;
 }
 .blur {
   width: 0;
   height: 0;
   box-shadow: 0 0 260px 100px rgba($primary, 0.3);
 }
-// .input {
-//   display: flex;
-//   width: 100%;
-//   font-size: 20px;
+.dropdown {
+  position: relative;
+  z-index: 10;
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 16px 6px 21px;
+    background-color: $blue;
+    border-radius: 8px;
+    max-width: 192px;
+    cursor: pointer;
+    transition: 0.3s linear;
+    position: relative;
+    span {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 13px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      &.arrow {
+        margin: 0 0 0 44px;
+        transition: 0.2s linear;
+      }
+    }
+    &:after {
+      content: "";
+      height: 100%;
+      width: 100%;
+      transition: 0.2s linear;
+      position: absolute;
+      top: 6px;
+      left: 0;
+      pointer-events: none;
+    }
+  }
+  &:hover {
+    .dropdown__content {
+      max-height: 400px;
+      opacity: 1;
+      pointer-events: all;
+      &:after {
+        opacity: 1;
+      }
+    }
+    .dropdown__button {
+      &:after {
+        pointer-events: all;
+      }
+      span {
+        &.arrow {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+  &__content {
+    width: 100%;
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s linear;
+    padding: 17px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    background: $blueDark;
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    background: $blueDark;
+    &::after {
+      content: "";
+      width: calc(100% + 2px);
+      height: calc(100% + 2px);
+      position: absolute;
+      transition: 0.2s linear;
+      opacity: 0;
+      top: -1px;
+      left: -1px;
+      background: linear-gradient(
+        90deg,
+        rgba(186, 255, 0, 0.19) 0%,
+        rgba(6, 255, 204, 0.28) 100%
+      );
+      border-radius: 8px;
+      z-index: -2;
+    }
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transition: 0.1s linear;
+      background: $blueDark;
+      top: 0;
+      left: 0;
+      border-radius: 8px;
+      z-index: -1;
+    }
+    p {
+      font-size: 14px;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: 0.2s linear;
+      &:hover {
+        opacity: 0.8;
+      }
+      span {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 8px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &.bg {
+    .dropdown {
+      &__button {
+        background: unset;
+        border: 1px solid $blue;
+        max-width: unset;
+        padding: 5px 16px;
+        font-size: 12px;
+        &:after {
+          display: none;
+        }
+      }
+      &__content {
+        background: $blue;
+        box-shadow: unset;
+        padding: 6px 16px;
+        top: 100%;
+        border: 1.5px solid $blue;
+        border-radius: 0px 0px 4px 4px;
+        button {
+          margin-bottom: 12px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          input {
+            display: none;
+            &:checked + label {
+              span {
+                &::before {
+                  opacity: 0;
+                }
+                img {
+                  opacity: 1;
+                }
+              }
+              p {
+                background: linear-gradient(90deg, #baff00 0%, #06ffcc 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                text-fill-color: transparent;
+              }
+            }
+          }
+          label {
+            display: flex;
+            align-items: center;
+            span {
+              margin: -3px 12px 0 0;
+              width: 24px;
+              height: 24px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              position: relative;
+              &:before {
+                content: "";
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                @include transition;
+                background-image: url("../images/icons/tick-circle-white.svg");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                opacity: 1;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+              }
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                opacity: 0;
+                @include transition;
+              }
+            }
+            p {
+              font-size: 12px;
+              line-height: 13px;
+              font-weight: 700;
+              color: $white;
+              @include transition;
+            }
+          }
+        }
+        &::before {
+          display: none;
+        }
+        &:after {
+          display: none;
+        }
+      }
+    }
+    &:hover {
+      .dropdown__button {
+        border-radius: 4px 4px 0px 0px;
+      }
+    }
+  }
+}
 
-//   input,
-//   textarea,
-//   &__selected {
-//     padding: 1.2em 1.9em;
-//     border-radius: 2em;
-//     width: 100%;
-//     background-color: $white;
-//     border: 2px solid $white;
-//     resize: none;
-//     transition: 0.3s ease-out;
-
-//     //font
-//     color: $black;
-//     font-family: $font-primary;
-//     font-style: normal;
-//     font-weight: 500;
-//     font-size: inherit;
-//     line-height: 1;
-//     &::placeholder {
-//       color: rgba($black, 0.4);
-//     }
-//   }
-//   input:focus,
-//   textarea:focus {
-//     color: $secondary;
-//     border-color: rgba($black, 0.8);
-//   }
-//   &--primary {
-//     input {
-//       background: $white;
-//       border-color: rgba($black, 0.06);
-//       box-shadow: 0px 1em 1.3em rgba($black, 0.22);
-//       border-radius: 25;
-//       &:focus {
-//         color: $secondary;
-//         border-color: $secondary;
-//         // background: $secondary;
-//       }
-//     }
-//   }
-//   &--underline {
-//     input,
-//     textarea,
-//     &__selected {
-//       padding: 1em 0.2em;
-//       border-radius: 0;
-//       border: 0;
-//       border-bottom: 1px solid $white;
-//     }
-//   }
-//   &--select {
-//     position: relative;
-//     min-width: 130px;
-//     .input {
-//       &__selected {
-//         cursor: pointer;
-//         transition-delay: 0.25s;
-
-//         &:hover {
-//           opacity: 0.8;
-//           border-color: rgba($black, 0.8);
-//         }
-
-//         &:after {
-//           color: inherit;
-//           content: "";
-//           position: absolute;
-//           display: block;
-//           top: 50%;
-//           right: 1.2em;
-//           width: 0;
-//           height: 0;
-//           border-bottom: 6px solid currentColor;
-//           border-right: 6px solid transparent;
-//           border-left: 6px solid transparent;
-//           transform: translateY(-50%) rotate(180deg);
-//           transition: 0.3s ease;
-//         }
-//       }
-//       &__dropdown {
-//         position: absolute;
-//         top: calc(100% - 3px);
-//         width: 100%;
-//         max-height: 0;
-//         opacity: 0;
-//         overflow: hidden;
-//         background-color: $white;
-//         border: 2px solid transparent;
-//         color: $black;
-//         box-sizing: border-box;
-//         border: 2px solid transparent;
-//         border-radius: 0 0 2em 2em;
-//         border-top: unset;
-//         transition: max-height 0.3s ease, border-color 0s ease 0.3s,
-//           opacity 0.1s ease 0.2s;
-//         @include hideScroll;
-
-//         z-index: 1;
-
-//         &-item {
-//           cursor: pointer;
-//           padding: 0.4em 1em;
-//           border-top: 1px solid rgba($black, 0.1);
-//           transition: 0.3s ease-out;
-
-//           &:hover {
-//             background: $white;
-//           }
-//           &:first-child {
-//             border-top: unset;
-//           }
-//           strong {
-//             color: $black;
-//             font-weight: 500;
-//             pointer-events: none;
-//           }
-//           p {
-//             pointer-events: none;
-//           }
-//         }
-//       }
-//     }
-
-//     &.active .input {
-//       &__selected {
-//         color: $black;
-//         border-radius: 2em 2em 0 0;
-//         border-bottom: 1px solid rgba($black, 0.1);
-//         border-color: $black;
-//         transition-duration: 0.1s;
-//         transition-delay: 0s;
-//         &:after {
-//           transform: translateY(-50%);
-//         }
-//       }
-//       &__dropdown {
-//         top: 100%;
-//         max-height: 30vh;
-//         overflow-y: auto;
-//         border-color: $black;
-//         opacity: 1;
-//         padding: 0.5em 0 1em 0;
-//         transition: max-height 0.4s ease, opacity 0.2s ease;
-//       }
-//     }
-//   }
-//   &--buttonRight {
-//     position: relative;
-//     input {
-//       padding-right: 3em;
-//     }
-//     .button {
-//       position: absolute;
-//       font-size: inherit;
-//       top: 50%;
-//       right: 0.5em;
-//       transform: translateY(-50%);
-//     }
-//     &._wideButton {
-//       input {
-//         padding-right: 8em;
-//       }
-//       .button {
-//         width: 7em;
-//       }
-//     }
-//   }
-// }
 .button {
   cursor: pointer;
   display: flex;
@@ -214,14 +282,13 @@
     width: auto;
   }
   &--primary {
-    color: $black-bg;
+    color: $blue;
     border-color: transparent;
-    border-radius: 100px;
+    border-radius: 50px;
     background: $gradient2;
     background-size: 200% 100%;
     background-position: 50%;
     transition: 0.3s ease-out;
-
     &:hover {
       opacity: 0.8;
       background-position: 80%;
@@ -231,11 +298,39 @@
   &--border {
     border-color: $white;
     border-radius: 100px;
-
+    color: $white;
+    font-weight: 700;
+    padding: 8px;
+    border-radius: 4px;
+    position: relative;
+    background: #08050a;
+    @include transition;
+    &::before {
+      content: "";
+      width: calc(100% + 2px);
+      height: calc(100% + 2px);
+      background: linear-gradient(90deg, #baff00 0%, #06ffcc 100%);
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      border-radius: 4px;
+      z-index: -2;
+      @include transition;
+    }
+    &:after{
+      content: "";
+      width:100%;
+      height: 100%;
+      background: $black;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 4px;
+      z-index: -1;
+      @include transition;
+    }
     &:hover {
-      border-color: $primary;
-      color: $primary;
-      background: rgba($primary, 0.03);
+      opacity: .8;
     }
   }
   &:active {

@@ -1,88 +1,153 @@
 .header {
+  background: $blueDark;
+  border-bottom: 1px solid $blue;
   position: absolute;
   top: 0;
-  left: 0;
   width: 100%;
-  padding: 25px 0;
-  z-index: 1;
-  transition: 0.3s ease-out;
-  transition-property: opacity, transform, padding;
-
   &__inner {
-    position: relative;
+    padding: 25px 0 17px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
-    z-index: 2;
-    font-size: 25px;
-
-    &-group {
+    &-logo {
+      width: 110px;
+      max-height: 32px;
       display: flex;
       align-items: center;
-      gap: 0.8em;
-    }
-    .button {
-      &--primary {
-        border: 1px solid $white;
+      justify-content: center;
+      @include transition;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      &:hover {
+        opacity: 0.8;
       }
     }
-    .logo {
-      font-size: inherit;
-    }
-    .burger {
-      display: none;
-    }
-  }
-  &:after {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: $gradient;
-    opacity: 0;
-    transition: 0.3s ease-out;
-  }
-  &:before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: $black-bg;
-    opacity: 0;
-    transition: 0.15s ease-out;
-  }
-
-  &.sticky {
-    position: fixed;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba($white, 0.4);
-    transition-duration: 0.5s;
-    backdrop-filter: blur(8px);
-
-    &:after {
-      opacity: 0.2;
-    }
-    &:before {
-      opacity: 0.8;
-    }
-    .header__inner {
-      font-size: 22px;
-
+    &-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       .button {
-        font-size: 1.04em;
+        &--primary {
+          padding: 16px 19px;
+          font-size: 14px;
+          letter-spacing: 0.3px;
+        }
       }
     }
   }
-
-  & + section {
-    margin-top: 105px;
+  .nav {
+    &__inner {
+      &-links {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        a {
+          color: $white;
+          margin-right: 40px;
+          @include transition;
+          &:hover {
+            opacity: 0.8;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+  .dropdown {
+    margin-right: 26px;
   }
 }
+
+// .header {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   padding: 25px 0;
+//   z-index: 1;
+//   transition: 0.3s ease-out;
+//   transition-property: opacity, transform, padding;
+
+//   &__inner {
+//     position: relative;
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     gap: 30px;
+//     z-index: 2;
+//     font-size: 25px;
+
+//     &-group {
+//       display: flex;
+//       align-items: center;
+//       gap: 0.8em;
+//     }
+//     .button {
+//       &--primary {
+//         border: 1px solid $white;
+//       }
+//     }
+//     .logo {
+//       font-size: inherit;
+//     }
+//     .burger {
+//       display: none;
+//     }
+//   }
+//   &:after {
+//     position: absolute;
+//     content: "";
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background: $gradient;
+//     opacity: 0;
+//     transition: 0.3s ease-out;
+//   }
+//   &:before {
+//     position: absolute;
+//     content: "";
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background: $black-bg;
+//     opacity: 0;
+//     transition: 0.15s ease-out;
+//   }
+
+//   &.sticky {
+//     position: fixed;
+//     padding: 10px 0;
+//     border-bottom: 1px solid rgba($white, 0.4);
+//     transition-duration: 0.5s;
+//     backdrop-filter: blur(8px);
+
+//     &:after {
+//       opacity: 0.2;
+//     }
+//     &:before {
+//       opacity: 0.8;
+//     }
+//     .header__inner {
+//       font-size: 22px;
+
+//       .button {
+//         font-size: 1.04em;
+//       }
+//     }
+//   }
+
+//   & + section {
+//     margin-top: 105px;
+//   }
+// }
 // .nav {
 //   flex-grow: 1;
 //   &__inner {
