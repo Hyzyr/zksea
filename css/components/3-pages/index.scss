@@ -95,6 +95,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-right: 4px;
             img {
               width: 100%;
               height: 100%;
@@ -595,7 +596,6 @@
     }
   }
 }
-
 @mixin controls-580 {
   .controls {
     &__inner {
@@ -1176,7 +1176,7 @@
       }
       .button {
         &--primary {
-          padding: 18px 25px;
+          padding: 15px 25px 14px;
           width: 100%;
           font-size: 16px;
           font-weight: 700;
@@ -1187,7 +1187,7 @@
           line-height: 17px;
           font-weight: 700;
           border-radius: 8px;
-          padding: 18px 25px;
+          padding: 15px 25px;
           &:after {
             border-radius: 8px;
           }
@@ -1416,7 +1416,6 @@
     }
   }
 }
-
 // #productDetails
 .productDetails {
   &__inner {

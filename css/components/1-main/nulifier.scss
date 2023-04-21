@@ -54,6 +54,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   background: $black;
+  position: relative;
 }
 body.active {
   overflow: hidden;
