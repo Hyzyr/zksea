@@ -1,150 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>ZkSea</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/main.css" />
-  <title>ZkSea</title>
-</head>
-
-<body>
-  <div class="main">
-
-    <!-- #header -->
-    <header class="header" id="header">
-      <div class="autoContainer">
-        <div class="header__inner">
-          <a href="./index.html" class="header__inner-logo">
-            <img src="./images/icons/logo.svg" alt="">
-          </a>
-          <nav class="nav" id="menu">
-            <div class="nav__inner">
-              <div class="nav__inner-links">
-                <a href="./index.html">NFTs</a>
-                <a href="./nfts.html">My NFTs</a>
-                <a href="./createCollection.html" class="active">Create</a>
-                <a href="./myNfts.html">Collections</a>
-                <a href="#">My collection</a>
-              </div>
-              <div class="nav__inner-buttons">
-                <div class="dropdown">
-                  <div class="dropdown__button">
-                    <span>
-                      <img src="./images/icons/starkNet.svg" alt="">
-                    </span>
-                    StarkNet
-                    <span class="arrow">
-                      <img src="./images/icons/arrow-down.svg" alt="">
-                    </span>
-                  </div>
-                  <div class="dropdown__content">
-                    <div class="dropdown__content-item">
-                      <p>
-                        <span>
-                          <img src="./images/icons/zkSync.svg" alt="">
-                        </span>
-                        zkSync Era
-                      </p>
-                      <p>
-                        <span>
-                          <img src="./images/icons/starkNet.svg" alt="">
-                        </span>
-                        StarkNet
-                      </p>
-                      <p>
-                        <span>
-                          <img src="./images/icons/starkNet.svg" alt="">
-                        </span>
-                        StarkNet Testnet
-                      </p>
-                      <p>
-                        <span>
-                          <img src="./images/icons/zkSync.svg" alt="">
-                        </span>
-                        ZkSync Era Testnet
-                      </p>
-                      <p>
-                        <span>
-                          <img src="./images/icons/blockChain.svg" alt="">
-                        </span>
-                        BlockChain
-                      </p>
+  <body>
+    <div class="main">
+      <!-- #header -->
+      <header class="header" id="header">
+        <div class="autoContainer">
+          <div class="header__inner">
+            <a href="./index.html" class="header__inner-logo">
+              <img src="./images/icons/logo.svg" alt="" />
+            </a>
+            <nav class="nav" id="menu">
+              <div class="nav__inner">
+                <div class="nav__inner-links">
+                  <a href="./index.html">NFTs</a>
+                  <a href="./nfts.html">My NFTs</a>
+                  <a href="./createCollection.html" class="active">Create</a>
+                  <a href="./myNfts.html">Collections</a>
+                  <a href="#">My collection</a>
+                </div>
+                <div class="nav__inner-buttons">
+                  <div class="dropdown">
+                    <div class="dropdown__button">
+                      <span>
+                        <img src="./images/icons/starkNet.svg" alt="" />
+                      </span>
+                      StarkNet
+                      <span class="arrow">
+                        <img src="./images/icons/arrow-down.svg" alt="" />
+                      </span>
+                    </div>
+                    <div class="dropdown__content">
+                      <div class="dropdown__content-item">
+                        <p>
+                          <span>
+                            <img src="./images/icons/zkSync.svg" alt="" />
+                          </span>
+                          zkSync Era
+                        </p>
+                        <p>
+                          <span>
+                            <img src="./images/icons/starkNet.svg" alt="" />
+                          </span>
+                          StarkNet
+                        </p>
+                        <p>
+                          <span>
+                            <img src="./images/icons/starkNet.svg" alt="" />
+                          </span>
+                          StarkNet Testnet
+                        </p>
+                        <p>
+                          <span>
+                            <img src="./images/icons/zkSync.svg" alt="" />
+                          </span>
+                          ZkSync Era Testnet
+                        </p>
+                        <p>
+                          <span>
+                            <img src="./images/icons/blockChain.svg" alt="" />
+                          </span>
+                          BlockChain
+                        </p>
+                      </div>
                     </div>
                   </div>
+                  <button class="button--primary">Connect Wallet</button>
                 </div>
-                <button class="button--primary">
-                  Connect Wallet
+              </div>
+            </nav>
+            <div class="burger" id="menuBtn">
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- #header end -->
+
+      <!-- #collection start -->
+      <section class="creatCollection">
+        <div class="autoContainer">
+          <div class="creatCollection__inner">
+            <div class="creatCollection__inner-image">
+              <div class="ratioImage">
+                <img src="./images/cartProduct.png" alt="" />
+              </div>
+            </div>
+            <form class="creatCollection__inner-form">
+              <div class="creatCollection__form-buttons">
+                <button class="button--primary">Create Collection</button>
+                <button class="button--border">
+                  <span> Collection Details </span>
                 </button>
               </div>
-            </div>
-          </nav>
-          <div class="burger" id="menuBtn">
-            <span></span>
-          </div>
-        </div>
-      </div>
-    </header>
-    <!-- #header end -->
-
-    <!-- #collection start -->
-    <section class="creatCollection">
-      <div class="autoContainer">
-        <div class="creatCollection__inner">
-          <div class="creatCollection__inner-image">
-            <div class="ratioImage">
-              <img src="./images/cartProduct.png" alt="">
-            </div>
-          </div>
-          <form class="creatCollection__inner-form">
-            <div class="form__buttons">
-              <button class="button--primary">
-                Create Collection
-              </button>
-              <button class="button--border">
-                <span>
-                  Collection Details
-                </span>
-              </button>
-            </div>
-            <div class="form__file">
-              <h5>
-                File type supported: JPG,JPEG,PNG,GIF
-              </h5>
-              <button>
-                <span><img src="./images/icons/document-upload.svg" alt=""></span>
-                <p>
-                  Choose a file
-                </p>
-              </button>
-            </div>
-            <div class="form__inputs">
-              <input type="text" placeholder="Collection Name">
-              <textarea placeholder="Description"></textarea>
-              <div class="form__inputs-body">
-                <input type="text" placeholder="Display Name">
-                <input type="text" placeholder="Website">
+              <div class="creatCollection__form-file">
+                <h5>File type supported: JPG,JPEG,PNG,GIF</h5>
+                <div class="creatCollection__form-file-input">
+                  <input type="file" name="sd" id="" />
+                  <span
+                    ><img src="./images/icons/document-upload.svg" alt=""
+                  /></span>
+                  <p>Choose a file</p>
+                </div>
               </div>
-            </div>
-            <button class="button--primary">
-              Create Collection
-            </button>
-          </form>
+              <div class="creatCollection__form-inputs">
+                <input type="text" placeholder="Collection Name" />
+                <textarea placeholder="Description"></textarea>
+                <div class="creatCollection__form-inputs-body">
+                  <input type="text" placeholder="Display Name" />
+                  <input type="text" placeholder="Website" />
+                </div>
+              </div>
+              <button class="button--primary">Create Collection</button>
+            </form>
+          </div>
         </div>
-      </div>
-    </section>
-    <!-- #collection end -->
+      </section>
+      <!-- #collection end -->
 
-    <!-- #bubles start -->
-    <div class="bubles">
-      <div class="middleLeftUp blur">
+      <!-- #bubles start -->
+      <div class="bubles">
+        <div class="middleLeftUp blur"></div>
       </div>
+      <!-- #bubles end -->
     </div>
-    <!-- #bubles end -->
-
-  </div>
-  <script src="js/main.js"></script>
-</body>
-
+    <script src="js/main.js"></script>
+  </body>
 </html>

@@ -28,9 +28,3 @@ if (header)
       header.classList.remove("sticky");
     }
   });
-
-const from = document.querySelector(".creatCollection__inner-form");
-
-from.addEventListener("click", (e) => {
-  e.preventDefault();
-});

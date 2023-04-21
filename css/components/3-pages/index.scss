@@ -397,15 +397,17 @@
         font-weight: 400;
         color: $white;
         position: relative;
+
         &:after {
           content: "";
           width: 0;
           height: 2px;
-          background: $gradient;
           position: absolute;
+          background: rgba($white, 0.4);
           bottom: -17px;
-          left: 0;
+          left: 50%;
           @include transition;
+          transform: translateX(-50%);
         }
         &:last-child {
           margin-right: 0;
@@ -413,6 +415,7 @@
         &.active {
           &:after {
             width: 100%;
+            background: $gradient;
           }
         }
         &:hover {
@@ -1070,114 +1073,13 @@
       border: 1px solid $blue;
       position: relative;
       z-index: 2;
-      .form {
-        &__buttons {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin-bottom: 24px;
-          button {
-            width: calc(50% - 8px);
-          }
-        }
-        &__file {
-          width: 100%;
-          margin-bottom: 24px;
-          h5 {
-            font-weight: 400;
-            color: $gray2;
-            margin-bottom: 16px;
-            line-height: 16px;
-          }
-          button {
-            width: 100%;
-            padding: 16px 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
 
-            p {
-              color: $gray2;
-            }
-            span {
-              width: 24px;
-              height: 24px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              margin-right: 12px;
-              img {
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-              }
-            }
-            &::before {
-              content: "";
-              width: 100%;
-              height: 100%;
-              position: absolute;
-              border-radius: 8px;
-              border: 2px dashed $blueDark;
-              background: linear-gradient($blueDark 0 0) padding-box,
-                linear-gradient(90deg, #baff00 0%, #06ffcc 100%) border-box;
-              z-index: -1;
-
-              // background-image: url("../images/dashedBorder.png");
-              // background-position: center;
-              // background-repeat: no-repeat;
-              // background-size: contain;
-            }
-          }
-        }
-        &__inputs {
-          margin-bottom: 30px;
-          input {
-            width: 100%;
-            padding: 14px 16px;
-            color: $white;
-            font-size: 16px;
-            font-weight: 700;
-            border: 1px solid $gray2;
-            border-radius: 8px;
-            background: transparent;
-            margin-bottom: 16px;
-            &::placeholder {
-              color: $gray2;
-            }
-          }
-          textarea {
-            width: 100%;
-            margin-bottom: 8px;
-            padding: 14px 16px;
-            min-height: 80px;
-            color: $white;
-            font-size: 16px;
-            font-weight: 700;
-            border: 1px solid $gray2;
-            border-radius: 8px;
-            background: transparent;
-            resize: none;
-            &::placeholder {
-              color: $gray2;
-            }
-          }
-          &-body {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            input {
-              width: calc(50% - 8px);
-              margin-bottom: 0;
-            }
-          }
-        }
+      & > .button--primary {
+        width: 100%;
       }
       .button {
         &--primary {
           padding: 15px 25px 14px;
-          width: 100%;
           font-size: 16px;
           font-weight: 700;
           border-radius: 8px;
@@ -1194,6 +1096,143 @@
           &::before {
             border-radius: 8px;
           }
+        }
+      }
+    }
+  }
+  &__form {
+    &-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      button {
+        width: calc(50% - 8px);
+      }
+    }
+    &-file {
+      width: 100%;
+      margin-bottom: 24px;
+      h5 {
+        font-weight: 400;
+        color: $gray2;
+        margin-bottom: 16px;
+        line-height: 16px;
+      }
+      &-input {
+        position: relative;
+        width: 100%;
+        padding: 16px 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        input {
+          cursor: pointer;
+          position: absolute;
+          opacity: 0;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+        p {
+          color: $gray2;
+          transition: 0.2s ease-out;
+        }
+        span {
+          width: 24px;
+          height: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 12px;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+        &::before {
+          content: "";
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          border-radius: 8px;
+          border: 2px dashed $blueDark;
+          background: linear-gradient($blueDark 0 0) padding-box,
+            linear-gradient(90deg, #baff00 0%, #06ffcc 100%) border-box;
+          z-index: -1;
+
+          // background-image: url("../images/dashedBorder.png");
+          // background-position: center;
+          // background-repeat: no-repeat;
+          // background-size: contain;
+        }
+        &:hover {
+          p {
+            color: $primary;
+          }
+        }
+      }
+    }
+    &-inputs {
+      margin-bottom: 30px;
+      input {
+        width: 100%;
+        padding: 14px 16px;
+        color: $white;
+        font-size: 16px;
+        font-weight: 700;
+        border: 1px solid $gray2;
+        border-radius: 8px;
+        background: transparent;
+        margin-bottom: 16px;
+
+        &::placeholder {
+          color: $gray2;
+          transition: 0.2s ease-out;
+        }
+      }
+      textarea {
+        margin-bottom: 8px;
+        width: 100%;
+        padding: 14px 16px;
+        min-height: 80px;
+        color: $white;
+        font-size: 16px;
+        font-weight: 700;
+        border: 1px solid $gray2;
+        border-radius: 8px;
+        background: transparent;
+        resize: none;
+
+        &::placeholder {
+          color: $gray2;
+          transition: 0.2s ease-out;
+        }
+      }
+      textarea,
+      input {
+        transition: 0.2s ease-out;
+
+        &:hover {
+          border-color: rgba($white, 0.8);
+        }
+        &:focus {
+          border-color: rgba($primary, 0.8);
+          &::placeholder {
+            color: rgba($white, 0.2);
+          }
+        }
+      }
+      &-body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        input {
+          width: calc(50% - 8px);
+          margin-bottom: 0;
         }
       }
     }
@@ -1232,16 +1271,16 @@
             padding: 16px 23px;
           }
         }
-        .form {
-          &__buttons {
-          }
-          &__file {
-            h5 {
-              font-size: 15px;
-              line-height: 22px;
-              margin-bottom: 10px;
-            }
-          }
+      }
+    }
+    &__form {
+      &-buttons {
+      }
+      &-file {
+        h5 {
+          font-size: 15px;
+          line-height: 22px;
+          margin-bottom: 10px;
         }
       }
     }
@@ -1268,59 +1307,59 @@
             padding: 14px 20px;
           }
         }
-        .form {
-          &__buttons {
-            margin-bottom: 15px;
-            .button {
-              &--primary {
-                width: calc(50% - 6px);
-              }
-              &--border {
-                width: calc(50% - 6px);
-              }
-            }
+      }
+    }
+    &__form {
+      &-buttons {
+        margin-bottom: 15px;
+        .button {
+          &--primary {
+            width: calc(50% - 6px);
           }
-          &__file {
-            margin-bottom: 15px;
-            button {
-              padding: 12px 15px;
-              p {
-                font-size: 14px;
-              }
-              span {
-                width: 20px;
-                height: 20px;
-              }
-            }
-            h5 {
-              font-size: 14px;
-              line-height: 16px;
-              margin-bottom: 15px;
-            }
+          &--border {
+            width: calc(50% - 6px);
           }
-          &__inputs {
-            margin-bottom: 20px;
-            &-body {
-              input {
-                width: calc(50% - 6px);
-              }
-            }
-            input {
-              padding: 12px 14px;
-              font-size: 14px;
-              margin-bottom: 10px;
-              &::placeholder {
-                font-size: 14px;
-              }
-            }
-            textarea {
-              padding: 12px 14px;
-              font-size: 14px;
-              margin-bottom: 5px;
-              &::placeholder {
-                font-size: 14px;
-              }
-            }
+        }
+      }
+      &-file {
+        margin-bottom: 15px;
+        button {
+          padding: 12px 15px;
+          p {
+            font-size: 14px;
+          }
+          span {
+            width: 20px;
+            height: 20px;
+          }
+        }
+        h5 {
+          font-size: 14px;
+          line-height: 16px;
+          margin-bottom: 15px;
+        }
+      }
+      &-inputs {
+        margin-bottom: 20px;
+        &-body {
+          input {
+            width: calc(50% - 6px);
+          }
+        }
+        input {
+          padding: 12px 14px;
+          font-size: 14px;
+          margin-bottom: 10px;
+          &::placeholder {
+            font-size: 14px;
+          }
+        }
+        textarea {
+          padding: 12px 14px;
+          font-size: 14px;
+          margin-bottom: 5px;
+          &::placeholder {
+            font-size: 14px;
           }
         }
       }
@@ -1368,12 +1407,11 @@
 @mixin creatCollection-370 {
   .creatCollection {
     &__inner {
-      
       &-image {
         margin: 0 auto 10px;
       }
       &-form {
-        padding: 20px 10px ;
+        padding: 20px 10px;
         .button {
           &--primary {
             font-size: 12px;
@@ -1384,32 +1422,32 @@
             padding: 12px 10px;
           }
         }
-        .form{
-          &__inputs{
-            margin-bottom: 10px;
-            input{
-              font-size: 12px;
-              padding: 10px 12px;
-              &::placeholder{
-                font-size: 12px;
-              }
-            }
+      }
+    }
+    &__form {
+      &-inputs {
+        margin-bottom: 10px;
+        input {
+          font-size: 12px;
+          padding: 10px 12px;
+          &::placeholder {
+            font-size: 12px;
           }
-          &__file{
-            h5{
-              font-size: 12px;
-            }
-            button{
-              padding: 10px 12px;
-              p{
-                font-size: 13px;
-              }
-              span{
-                width: 18px;
-                height: 18px;
-                margin-right: 5px;
-              }
-            }
+        }
+      }
+      &-file {
+        h5 {
+          font-size: 12px;
+        }
+        button {
+          padding: 10px 12px;
+          p {
+            font-size: 13px;
+          }
+          span {
+            width: 18px;
+            height: 18px;
+            margin-right: 5px;
           }
         }
       }
