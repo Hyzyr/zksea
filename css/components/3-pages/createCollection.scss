@@ -1,0 +1,354 @@
+// #collection
+.creatCollection {
+  margin-top: 14px;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    &-image {
+      width: calc(45% - 25px);
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        object-fit: cover;
+        transform: translate(-50%, -50%);
+      }
+      .ratioImage {
+        padding-bottom: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  &__form {
+    width: calc(55% - 25px);
+    background: $blueDark;
+    padding: 31px 25px 34px;
+    border-radius: 16px;
+    border: 1px solid $blue;
+    position: relative;
+    z-index: 2;
+    & > .button--primary {
+      width: 100%;
+      margin-top: 6px;
+    }
+    .button {
+      &--primary {
+        padding: 15px 25px 14px;
+        font-size: 16px;
+        font-weight: 700;
+        border-radius: 8px;
+      }
+      &--border {
+        font-size: 16px;
+        line-height: 17px;
+        font-weight: 700;
+        border-radius: 8px;
+        padding: 15px 25px;
+        &:after {
+          border-radius: 8px;
+        }
+        &::before {
+          border-radius: 8px;
+        }
+      }
+    }
+    &-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      .input {
+        width: calc(50% - 8px);
+        margin-bottom: 0;
+        input {
+          margin-bottom: 0;
+        }
+      }
+      button {
+        width: calc(50% - 8px);
+      }
+    }
+    &-file {
+      width: 100%;
+      margin-bottom: 24px;
+      h5 {
+        font-weight: 400;
+        color: $gray2;
+        margin-bottom: 16px;
+        line-height: 16px;
+      }
+      &-input {
+        position: relative;
+        width: 100%;
+        padding: 16px 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        input {
+          cursor: pointer;
+          position: absolute;
+          opacity: 0;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+        p {
+          color: $gray2;
+          transition: 0.2s ease-out;
+        }
+        span {
+          width: 24px;
+          height: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 12px;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+        &::before {
+          content: "";
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          border-radius: 8px;
+          border: 2px dashed $blueDark;
+          background: linear-gradient($blueDark 0 0) padding-box,
+            linear-gradient(90deg, #baff00 0%, #06ffcc 100%) border-box;
+          z-index: -1;
+        }
+        &:hover {
+          p {
+            color: $primary;
+          }
+        }
+      }
+    }
+    input{
+      margin-bottom: 16px;
+      transition: 0.2s ease-out;
+      &:hover {
+        border-color: rgba($white, 0.8);
+      }
+      &:focus {
+        border-color: rgba($primary, 0.8);
+        &::placeholder {
+          color: rgba($white, 0.2);
+        }
+      }
+    }
+    textarea{
+      transition: 0.2s ease-out;
+      margin-bottom: 8px;
+      &:hover {
+        border-color: rgba($white, 0.8);
+      }
+      &:focus {
+        border-color: rgba($primary, 0.8);
+        &::placeholder {
+          color: rgba($white, 0.2);
+        }
+      }
+
+    }
+  }
+}
+@mixin creatCollection-1130 {
+  .creatCollection {
+    &__inner {
+      &-image {
+        width: calc(50% - 15px);
+      }
+    }
+    &__form {
+      width: calc(50% - 15px);
+    }
+  }
+}
+@mixin creatCollection-1025 {
+  .creatCollection {
+    &__inner {
+      &-image {
+        width: calc(50% - 10px);
+      }
+      &-form {
+      }
+    }
+    &__form {
+      width: calc(50% - 10px);
+      .button {
+        &--primary {
+          font-size: 15px;
+          line-height: 15px;
+          padding: 16px 23px;
+        }
+        &--border {
+          font-size: 15px;
+          line-height: 15px;
+          width: calc(50% - 6px);
+          padding: 16px 23px;
+        }
+      }
+      &-file {
+        h5 {
+          font-size: 15px;
+          line-height: 22px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+@mixin creatCollection-940 {
+  .creatCollection {
+    &__inner {
+      &-image {
+        width: calc(50% - 10px);
+      }
+    }
+    &__form {
+      width: calc(50% - 10px);
+      padding: 25px 15px 28px;
+      .button {
+        &--primary {
+          font-size: 14px;
+          line-height: 14px;
+          padding: 14px 20px;
+        }
+        &--border {
+          font-size: 14px;
+          line-height: 14px;
+          padding: 14px 20px;
+        }
+      }
+      &-buttons {
+        margin-bottom: 15px;
+        .button {
+          &--primary {
+            width: calc(50% - 6px);
+          }
+          &--border {
+            width: calc(50% - 6px);
+          }
+        }
+      }
+      &-file {
+        margin-bottom: 15px;
+        &-input {
+          padding: 12px 20px;
+          p {
+            font-size: 14px;
+          }
+          span {
+            width: 20px;
+            height: 20px;
+          }
+        }
+        h5 {
+          font-size: 14px;
+          line-height: 16px;
+          margin-bottom: 15px;
+        }
+      }
+      input{
+        margin-bottom: 10px;
+      }
+      textarea{
+        margin-bottom: 6px;
+      }
+    }
+  }
+}
+@mixin creatCollection-820 {
+  .creatCollection {
+    &__inner {
+      flex-direction: column;
+      &-image {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto 20px;
+        .ratioImage {
+          padding-bottom: 100%;
+        }
+      }
+    }
+    &__form {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }
+}
+@mixin creatCollection-460 {
+  .creatCollection {
+    margin-top: 0;
+    &__inner {
+      &-image {
+        margin: 0 auto 10px;
+      }
+    }
+    &__form {
+      .button {
+        &--primary {
+          font-size: 13px;
+          padding: 12px 15px;
+        }
+        &--border {
+          font-size: 13px;
+          padding: 12px 15px;
+        }
+      }
+    }
+  }
+}
+@mixin creatCollection-370 {
+  .creatCollection {
+    &__inner {
+      &-image {
+        margin: 0 auto 10px;
+      }
+      &-form {
+      }
+    }
+    &__form {
+      padding: 20px 10px;
+      .button {
+        &--primary {
+          font-size: 12px;
+          padding: 12px 10px;
+        }
+        &--border {
+          font-size: 12px;
+          padding: 12px 10px;
+        }
+      }
+      &-file {
+        h5 {
+          font-size: 12px;
+        }
+        button {
+          padding: 10px 12px;
+          p {
+            font-size: 13px;
+          }
+          span {
+            width: 18px;
+            height: 18px;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}

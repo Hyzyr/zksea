@@ -4,12 +4,14 @@
   overflow: hidden;
   padding-top: 110px;
   min-height: 100%;
+  position: relative;
 }
 .autoContainer {
   width: 100%;
   max-width: 1230px;
   padding: 0 60px;
   margin: 0 auto;
+  position: relative;
 }
 .bubles {
   position: absolute;
@@ -62,13 +64,18 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 6px 16px;
+    padding: 5px 16px;
     background-color: $blue;
     border-radius: 8px;
     max-width: 192px;
     cursor: pointer;
     transition: 0.3s linear;
     position: relative;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    &:hover {
+      border-color: $primary;
+    }
     span {
       width: 24px;
       height: 24px;
@@ -100,17 +107,7 @@
       display: flex;
       align-items: center;
     }
-  }
-  &:hover {
-    .dropdown__content {
-      max-height: 400px;
-      opacity: 1;
-      pointer-events: all;
-      &:after {
-        opacity: 1;
-      }
-    }
-    .dropdown__button {
+    &.active {
       &:after {
         pointer-events: all;
       }
@@ -121,6 +118,7 @@
       }
     }
   }
+
   &__content {
     width: 100%;
     max-height: 0;
@@ -196,6 +194,14 @@
       }
       &:last-child {
         margin-bottom: 0;
+      }
+    }
+    &.active {
+      max-height: 400px;
+      opacity: 1;
+      pointer-events: all;
+      &:after {
+        opacity: 1;
       }
     }
   }
@@ -362,14 +368,11 @@
   }
 
   &--social {
+    padding: unset;
     width: 24px;
     height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid $blue;
+    border-color: $blue;
     border-radius: 4px;
-    margin-right: 8px;
     @include transition;
     &:hover {
       border-color: $primary;
@@ -384,59 +387,6 @@
       max-height: 20px;
       fill: $white;
       @include transition;
-    }
-  }
-
-  &--tool {
-    width: 36px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4px;
-    background: $blue;
-    margin-right: 12px;
-    cursor: pointer;
-    @include transition;
-    border: 1px solid transparent;
-    svg {
-      width: 100%;
-      height: 100%;
-      max-height: 24px;
-      max-width: 24px;
-      fill: $white;
-      @include transition;
-      &.stroke {
-        fill: none;
-        stroke: $white;
-      }
-    }
-    &:hover {
-      background: $blueDark;
-      border-color: $primary;
-      svg {
-        fill: $primary;
-        &.stroke {
-          fill: none;
-          stroke: $primary;
-        }
-      }
-    }
-
-    &.filter {
-      background: unset;
-      border: 1px solid transparent;
-      border-radius: 4px;
-      @include transition;
-      &:hover {
-        border-color: $blue;
-        svg {
-          fill: $white;
-        }
-      }
-      &.active {
-        border-color: $blue;
-      }
     }
   }
 
@@ -461,11 +411,13 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    @include transition;
   }
   svg {
     width: 100%;
     height: 100%;
     fill: $white;
+    @include transition;
     &.stroke {
       fill: unset;
       stroke: $white;
@@ -477,6 +429,39 @@
   }
 }
 .input {
+  input {
+    width: 100%;
+    padding: 14px 16px;
+    color: $white;
+    font-size: 16px;
+    font-weight: 700;
+    border: 1px solid $gray2;
+    border-radius: 8px;
+    background: transparent;
+    &::placeholder {
+      color: $gray2;
+      transition: 0.2s ease-out;
+    }
+  }
+  &--textarea {
+    textarea {
+      width: 100%;
+      padding: 14px 16px;
+      min-height: 80px;
+      color: $white;
+      font-size: 16px;
+      font-weight: 700;
+      border: 1px solid $gray2;
+      border-radius: 8px;
+      background: transparent;
+      resize: none;
+
+      &::placeholder {
+        color: $gray2;
+        transition: 0.2s ease-out;
+      }
+    }
+  }
   &--radio {
     position: relative;
     @include transition;
@@ -562,11 +547,10 @@
       align-items: center;
       max-width: 255px;
       border-radius: 20px;
-      padding: 11px 15px;
+      padding: 10px 15px;
       background: $blue;
       border: 1px solid $blue;
       transition: 0.2s ease;
-
       color: $white;
       background: $blue;
       font-weight: 700;
@@ -650,7 +634,226 @@
     background-size: contain;
   }
 }
-
+.signIn {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  display: none;
+  &__inner {
+    padding: 18px 20px 10px;
+    box-shadow: 0px 4px 13px rgba(36, 12, 61, 0.6);
+    border-radius: 12px;
+    background: $blueDark;
+    position: absolute;
+    top: 93px;
+    right: 60px;
+    width: 100%;
+    max-width: 285px;
+    &::before {
+      content: "";
+      width: calc(100% + 2px);
+      height: calc(100% + 2px);
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      background: linear-gradient(
+        90deg,
+        rgba(186, 255, 0, 0.19) 0%,
+        rgba(6, 255, 204, 0.28) 100%
+      );
+      border-radius: 12px;
+      z-index: -1;
+    }
+    &-header {
+      display: flex;
+      align-items: center;
+      padding-bottom: 10px;
+      position: relative;
+      margin-bottom: 26px;
+      position: relative;
+      &-avatar {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 6px;
+        background: $blue;
+      }
+      &-text {
+        h5 {
+          font-weight: 400;
+          margin-bottom: 8px;
+          line-height: 16px;
+        }
+        P {
+          font-size: 12px;
+          line-height: 12px;
+          strong {
+            font-weight: 400;
+            background: linear-gradient(90deg, #baff00 0%, #06ffcc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+          }
+        }
+      }
+      &-close {
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: $blue;
+        position: absolute;
+        top: -12px;
+        right: -12px;
+        @include transition;
+        border: 1px solid transparent;
+        &::before {
+          content: "";
+          width: 12px;
+          height: 1px;
+          background: $white;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(45deg);
+          @include transition;
+        }
+        &::after {
+          content: "";
+          width: 12px;
+          height: 1px;
+          background: $white;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(-45deg);
+          @include transition;
+        }
+        &:hover {
+          background: $blueDark;
+          border-color: $primary;
+          &::before,
+          &:after {
+            background: $primary;
+          }
+        }
+      }
+      &:after {
+        content: "";
+        width: calc(100% + 40px);
+        height: 1px;
+        position: absolute;
+        left: -20px;
+        bottom: 0;
+        background: $blue;
+      }
+    }
+    &-button {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      @include transition;
+      .icon {
+        margin-right: 5px;
+        &.copy {
+          width: 14px;
+          height: 14px;
+          margin: -13px 0 0 8px;
+          svg {
+            fill: $blueDark;
+            &.stroke {
+              stroke: $black-1;
+            }
+          }
+        }
+      }
+      p {
+        font-size: 12px;
+        line-height: 12px;
+        font-weight: 700;
+        color: $white;
+        @include transition;
+      }
+      &-bg {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background-color: $blue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 5px;
+        .icon {
+          margin-right: 0;
+        }
+      }
+      &-text {
+        p {
+          line-height: 18px;
+          text-align: left;
+        }
+      }
+      &:hover {
+        .icon {
+          svg {
+            fill: $primary;
+            &.stroke {
+              stroke: $primary;
+              fill: unset;
+            }
+          }
+        }
+        p {
+          color: $primary;
+        }
+      }
+    }
+    &-text {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      position: relative;
+      &:after {
+        content: "";
+        width: calc(100% + 40px);
+        height: 1px;
+        position: absolute;
+        left: -20px;
+        bottom: 0;
+        background: $blue;
+      }
+      h6 {
+        font-weight: 400;
+      }
+      &-fund {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px 11px;
+        background: $blue;
+        border-radius: 4px;
+        p {
+          line-height: 14px;
+        }
+        .icon {
+          margin-right: 7px;
+        }
+      }
+    }
+  }
+  &.active{
+    display: block;
+  }
+}
 @mixin components-1130 {
   .main {
     padding-top: 95px;
@@ -672,6 +875,20 @@
           line-height: 16px;
         }
       }
+    }
+  }
+  .signIn {
+    &__inner {
+      top: 81px;
+      right: 40px;
+    }
+  }
+}
+@mixin components-1025{
+  .signIn {
+    &__inner {
+      top: 77px;
+      right: 30px;
     }
   }
 }
@@ -714,6 +931,35 @@
       }
     }
   }
+  .input {
+    input {
+      padding: 12px 14px;
+      font-size: 14px;
+      &::placeholder {
+        font-size: 14px;
+      }
+    }
+    &--textarea {
+      textarea {
+        padding: 12px 14px;
+        font-size: 14px;
+        &::placeholder {
+          font-size: 14px;
+        }
+      }
+    }
+    &--search {
+      input {
+        padding: 10px 15px;
+      }
+    }
+  }
+  .signIn {
+    &__inner {
+      top: 61px;
+      right: 25px;
+    }
+  }
 }
 @mixin components-820 {
   .button {
@@ -722,6 +968,7 @@
       font-size: 24px;
     }
   }
+  
 }
 @mixin components-768 {
   .button {
@@ -731,15 +978,21 @@
       font-size: 20px;
     }
   }
+  .signIn {
+    &__inner {
+      right: 15px;
+    }
+  }
 }
 @mixin components-580 {
-  .button {
-    &--tool {
-      width: 30px;
-      height: 30px;
-      svg {
-        max-width: 21px;
-        max-height: 21px;
+  .input {
+    &--search {
+      input {
+        font-weight: 400;
+        &::placeholder {
+          font-weight: 400;
+        }
+        padding: 10px 15px;
       }
     }
   }
@@ -758,9 +1011,28 @@
       height: 22px;
     }
   }
+  .signIn {
+    &__inner {
+      top: 53px;
+    }
+  }
 }
 @mixin components-370 {
   .main {
     padding-top: 65px;
+  }
+  .input {
+    input {
+      font-size: 12px;
+      padding: 10px 12px;
+      &::placeholder {
+        font-size: 12px;
+      }
+    }
+  }
+  .signIn {
+    &__inner {
+      right: 10px;
+    }
   }
 }

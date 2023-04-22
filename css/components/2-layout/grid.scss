@@ -1,0 +1,342 @@
+// #grid
+.grid {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 11px 9px 3px;
+    border: 1px solid $blue;
+    border-radius: 0px 0px 8px 8px;
+  }
+  &Product {
+    width: calc(20% - 6px);
+    border-radius: 8px;
+    position: relative;
+    margin: 8px 0;
+    /* Rectangle 10 */
+    background: linear-gradient(
+      158.14deg,
+      rgba(219, 219, 219, 0.26) -23.44%,
+      rgba(143, 143, 143, 0.03) 75.08%
+    );
+    border-radius: 8px;
+    background-color: $black;
+    &::before {
+      content: "";
+      width: calc(100% + 2px);
+      height: calc(100% + 2px);
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      z-index: 1;
+      background: linear-gradient(
+        90deg,
+        rgba(186, 255, 0, 0.19) -95.48%,
+        rgba(6, 255, 204, 0.28) 4.52%
+      );
+      border-radius: 8px;
+      z-index: -1;
+    }
+    &__image {
+      width: 100%;
+      padding-bottom: 112%;
+      position: relative;
+      background: $gray;
+      border-radius: 8px 8px 0 0;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    &__info {
+      padding: 16px 8px 11px;
+      h6 {
+        font-weight: 400;
+        margin-bottom: 10px;
+        small {
+          display: flex;
+          font-size: 13px;
+          background: linear-gradient(90deg, #baff00 0%, #06ffcc 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          text-fill-color: transparent;
+        }
+      }
+      &-text {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        z-index: 2;
+        &-icons {
+          display: flex;
+          align-items: center;
+
+          span {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+          P {
+            font-weight: 700;
+            font-size: 12px;
+            margin: 0 3px;
+          }
+        }
+      }
+      .button {
+        &--border {
+          span {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  &Nft {
+    width: calc(25% - 15px);
+    max-width: 255px;
+    margin: 15px 0;
+    position: relative;
+    background: linear-gradient(
+      158.14deg,
+      rgba(219, 219, 219, 0.26) 0.43%,
+      rgba(143, 143, 143, 0.03) 98.95%
+    );
+    border-radius: 8px;
+    background-color: $black;
+    &::before {
+      content: "";
+      width: calc(100% + 2px);
+      height: calc(100% + 2px);
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      z-index: 1;
+      background: linear-gradient(
+        90deg,
+        rgba(186, 255, 0, 0.19) 0%,
+        rgba(6, 255, 204, 0.28) 100%
+      );
+      border-radius: 8px;
+      z-index: -1;
+    }
+    &__image {
+      width: 100%;
+      padding-bottom: 112%;
+      position: relative;
+      background: $gray;
+      border-radius: 8px 8px 0 0;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    &__info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 10px 16px;
+      p {
+        font-size: 16px;
+        line-height: 16px;
+        font-weight: 700;
+        margin-top: 1px;
+      }
+      span {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 8px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+  &.nft {
+    .grid {
+      &__inner {
+        border: unset;
+        padding: 3px 0;
+      }
+    }
+  }
+}
+@mixin grid-1130 {
+  .grid {
+    &Product {
+      &__info {
+        padding: 14px 7px 10px;
+        h6 {
+          line-height: 20px;
+        }
+      }
+    }
+  }
+}
+@mixin grid-1025 {
+  .grid {
+    &Product {
+      width: calc(25% - 10px);
+      &:nth-child(9) {
+        display: none;
+      }
+      &:nth-child(10) {
+        display: none;
+      }
+    }
+    &Nft {
+      width: calc(25% - 10px);
+    }
+  }
+}
+@mixin grid-820 {
+  .grid {
+    &Product {
+      width: calc(33.3% - 10px);
+      &:nth-child(9) {
+        display: block;
+      }
+    }
+    &Nft {
+      width: calc(33.3% - 15px);
+      &:nth-child(7) {
+        display: none;
+      }
+      &:nth-child(8) {
+        display: none;
+      }
+    }
+  }
+}
+@mixin grid-680 {
+  .grid {
+    &Product {
+      &__image {
+        padding-bottom: 100%;
+      }
+      width: calc(50% - 10px);
+      &:nth-child(10) {
+        display: block;
+      }
+    }
+    &Nft {
+      width: calc(50% - 10px);
+      max-width: unset;
+      &:nth-child(7) {
+        display: block;
+      }
+      &:nth-child(8) {
+        display: block;
+      }
+    }
+  }
+}
+@mixin grid-580 {
+  .grid {
+    &Product {
+      width: calc(50% - 6px);
+      &:nth-child(10) {
+        display: block;
+      }
+    }
+    &Nft {
+      width: calc(50% - 6px);
+      margin: 10px 0;
+      &__image {
+        padding-bottom: 100%;
+      }
+      &__info {
+        p {
+          font-size: 14px;
+          line-height: 14px;
+        }
+        span {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+}
+@mixin grid-460 {
+  .grid {
+    &Product {
+      width: calc(50% - 5px);
+
+      &__info {
+        &-text {
+          &-icons {
+            span {
+              width: 20px;
+              height: 20px;
+            }
+            p {
+              font-size: 11px;
+            }
+          }
+        }
+        h6 {
+          font-size: 12px;
+          line-height: 18px;
+        }
+        .button {
+          &--border {
+            span {
+              font-size: 11px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@mixin grid-370 {
+  .grid {
+    &Product {
+      width: 100%;
+      max-width: 260px;
+      margin: 10px auto;
+    }
+    &Nft {
+      width: 100%;
+      max-width: 280px;
+      margin: 10px auto;
+      &__info {
+        p {
+          font-size: 14px;
+          line-height: 14px;
+        }
+        span {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+}
