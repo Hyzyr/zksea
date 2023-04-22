@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  padding-top: 108px;
+  padding-top: 110px;
+  min-height: 100%;
 }
 .autoContainer {
   width: 100%;
@@ -95,6 +96,10 @@
       left: 0;
       pointer-events: none;
     }
+    &-body {
+      display: flex;
+      align-items: center;
+    }
   }
   &:hover {
     .dropdown__content {
@@ -130,6 +135,12 @@
     top: calc(100% + 6px);
     left: 0;
     background: $blueDark;
+    &-item {
+      &-body {
+        display: flex;
+        align-items: center;
+      }
+    }
     &::after {
       content: "";
       width: calc(100% + 2px);
@@ -227,6 +238,46 @@
       }
     }
   }
+  &.big {
+    .dropdown {
+      &__button {
+        max-width: unset;
+        display: block;
+        padding: 11px 12px 11px 14px;
+        .arrow {
+          position: absolute;
+          top: 12px;
+          right: 12px;
+        }
+        &-body {
+          margin-bottom: 10px;
+          span {
+            margin-right: 8px;
+          }
+          p {
+            line-height: 16px;
+          }
+        }
+      }
+      &__content {
+        &-item {
+          margin-bottom: 15px;
+          &-body {
+            margin-bottom: 6px;
+            span {
+              margin-right: 5px;
+            }
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+        p {
+          font-size: 8px;
+        }
+      }
+    }
+  }
 }
 .button {
   cursor: pointer;
@@ -259,7 +310,7 @@
   }
 
   &--border {
-    border-color: $white;
+    border: unset;
     border-radius: 100px;
     color: $white;
     font-weight: 700;
@@ -389,55 +440,37 @@
     }
   }
 
-  &--search {
-    display: flex;
-    align-items: center;
-    max-width: 255px;
-    border-radius: 20px;
-    padding: 11px 15px;
-    background: $blue;
-    position: relative;
-    input {
-      color: $white;
-      background: $blue;
-      font-weight: 700;
-      font-size: 12px;
+  &--icon {
+    width: 24px;
+    height: 24px;
+    padding: unset;
+    img {
       width: 100%;
-      &::placeholder {
-        color: $gray2;
-        @include transition;
-      }
-      &:focus {
-        &::placeholder {
-          opacity: 0.7;
-        }
-      }
-    }
-    span {
-      width: 24px;
-      height: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      top: 50%;
-      right: 8px;
-      transform: translateY(-50%);
-      @include transition;
-      svg {
-        width: 100%;
-        height: 100%;
-        fill: $gray2;
-        @include transition;
-      }
-      &:hover {
-        svg {
-          fill: $primary;
-        }
-      }
+      height: 100%;
+      object-fit: cover;
     }
   }
- 
+}
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+    stroke: $white ;
+  }
+  &--sm {
+    width: 16px;
+    height: 16px;
+  }
 }
 .input {
   &--radio {
@@ -513,6 +546,61 @@
           object-fit: contain;
           opacity: 0;
           @include transition;
+        }
+      }
+    }
+  }
+  &--search {
+    position: relative;
+
+    input {
+      display: flex;
+      align-items: center;
+      max-width: 255px;
+      border-radius: 20px;
+      padding: 11px 15px;
+      background: $blue;
+      border: 1px solid $blue;
+      transition: 0.2s ease;
+
+      color: $white;
+      background: $blue;
+      font-weight: 700;
+      font-size: 12px;
+      width: 100%;
+      &::placeholder {
+        color: $gray2;
+        @include transition;
+      }
+      &:hover {
+        border-color: rgba($primary, 0.2);
+      }
+      &:focus {
+        &::placeholder {
+          opacity: 0.3;
+        }
+      }
+    }
+    span {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 50%;
+      right: 8px;
+      transform: translateY(-50%);
+      @include transition;
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: $gray2;
+        @include transition;
+      }
+      &:hover {
+        svg {
+          fill: $primary;
         }
       }
     }
@@ -594,6 +682,34 @@
       }
     }
   }
+  .icon {
+    width: 22px;
+    height: 22px;
+  }
+  .dropdown {
+    &.big {
+      .dropdown {
+        &__button {
+          &-body {
+            p {
+              font-size: 15px;
+              line-height: 15px;
+            }
+          }
+        }
+        &__content {
+          h6 {
+            font-size: 12px;
+            line-height: 12px;
+          }
+          &-item {
+            &-body {
+            }
+          }
+        }
+      }
+    }
+  }
 }
 @mixin components-820 {
   .button {
@@ -627,6 +743,16 @@
 @mixin components-460 {
   .main {
     padding-top: 70px;
+  }
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+  .button {
+    &--icon {
+      width: 22px;
+      height: 22px;
+    }
   }
 }
 @mixin components-370 {
