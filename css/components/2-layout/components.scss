@@ -465,7 +465,11 @@
   svg {
     width: 100%;
     height: 100%;
-    stroke: $white ;
+    fill: $white;
+    &.stroke {
+      fill: unset;
+      stroke: $white;
+    }
   }
   &--sm {
     width: 16px;
