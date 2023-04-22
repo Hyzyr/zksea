@@ -373,7 +373,7 @@ li {
       -ms-flex-direction: column;
           flex-direction: column;
   overflow: hidden;
-  padding-top: 110px;
+  padding: 110px 0 60px 0;
   min-height: 100%;
   position: relative;
 }
@@ -449,7 +449,6 @@ li {
   padding: 5px 16px;
   background-color: #240c3d;
   border-radius: 8px;
-  max-width: 192px;
   cursor: pointer;
   -webkit-transition: 0.3s linear;
   transition: 0.3s linear;
@@ -457,6 +456,7 @@ li {
   border: 1px solid transparent;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  min-width: 195px;
 }
 .dropdown__button:hover {
   border-color: #baff00;
@@ -482,7 +482,7 @@ li {
      object-fit: contain;
 }
 .dropdown__button span.arrow {
-  margin: 0 0 0 44px;
+  margin: 0 0 0 auto;
   -webkit-transition: 0.2s linear;
   transition: 0.2s linear;
 }
@@ -715,6 +715,7 @@ li {
   background-position: 50%;
   -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
+  font-weight: 700;
 }
 .button--primary:hover {
   opacity: 0.8;
@@ -2985,11 +2986,9 @@ li {
   .autoContainer {
     padding: 0 40px;
   }
-
   .main {
     padding-top: 95px;
   }
-
   .dropdown__button {
     font-size: 13px;
     padding: 5px 13px;
@@ -3005,12 +3004,10 @@ li {
     font-size: 13px;
     line-height: 16px;
   }
-
   .signIn__inner {
     top: 81px;
     right: 40px;
   }
-
   .header__inner {
     padding: 20px 0 15px;
   }
@@ -3030,30 +3027,25 @@ li {
     padding: 14px 17px;
     border-radius: 40px;
   }
-
   h2 {
     font-size: 32px;
     line-height: 32px;
   }
-
   h6 {
     font-size: 13px;
   }
-
   .productInfo__inner-details-text p {
     font-size: 15px;
   }
   .productInfoItem p {
     font-size: 13px;
   }
-
   .gridProduct__info {
     padding: 14px 7px 10px;
   }
   .gridProduct__info h6 {
     line-height: 20px;
   }
-
   .creatCollection__inner-image {
     width: calc(50% - 15px);
   }
@@ -3065,7 +3057,6 @@ li {
   .autoContainer {
     padding: 0 30px;
   }
-
   .header__inner {
     padding: 18px 0 14px;
   }
@@ -3086,7 +3077,6 @@ li {
   .header__inner .nav__inner-buttons .dropdown {
     margin-right: 15px;
   }
-
   .controls__inner-tabs {
     padding: 13px 15px 14px;
   }
@@ -3096,7 +3086,6 @@ li {
   .controls__inner-tools {
     padding: 20px 15px;
   }
-
   .gridProduct {
     width: calc(25% - 10px);
   }
@@ -3109,7 +3098,6 @@ li {
   .gridNft {
     width: calc(25% - 10px);
   }
-
   .creatCollection__inner-image {
     width: calc(50% - 10px);
   }
@@ -3132,7 +3120,6 @@ li {
     line-height: 22px;
     margin-bottom: 10px;
   }
-
   .productDetails__inner-image {
     width: calc(47% - 10px);
   }
@@ -3142,14 +3129,12 @@ li {
   .productDetails h2 {
     font-size: 30px;
   }
-
   .tab__inner-column {
     width: calc(53% - 10px);
   }
   .tab__inner-column:first-child {
     width: calc(47% - 10px);
   }
-
   .signIn__inner {
     top: 77px;
     right: 30px;
@@ -3159,20 +3144,16 @@ li {
   .autoContainer {
     padding: 0 25px;
   }
-
   .main {
     padding-top: 75px;
   }
-
   .button--boreder span {
     font-size: 12px;
   }
-
   .icon {
     width: 22px;
     height: 22px;
   }
-
   .dropdown.big .dropdown__button-body p {
     font-size: 15px;
     line-height: 15px;
@@ -3222,12 +3203,10 @@ li {
   .input--search input {
     padding: 10px 15px;
   }
-
   .signIn__inner {
     top: 61px;
     right: 25px;
   }
-
   .header .nav {
     position: fixed;
     top: 59px;
@@ -3280,18 +3259,21 @@ li {
         -ms-flex-direction: column;
             flex-direction: column;
     margin-right: 0;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     width: 100%;
+    gap: 10px;
+    margin-bottom: 20px;
   }
   .header .nav__inner-links a {
-    margin: 0 0 30px 0;
+    margin: 0;
+    padding: 5px 0;
     font-size: 14px;
-    line-height: 14px;
+    line-height: 1.2;
   }
   .header .nav__inner-buttons {
     -webkit-box-orient: vertical;
@@ -3306,8 +3288,21 @@ li {
         -ms-flex-pack: center;
             justify-content: center;
   }
+  .header .nav__inner-buttons .button--primary {
+    width: 100%;
+  }
   .header .nav__inner-buttons .dropdown {
+    width: 100%;
     margin: 0 0 30px 0;
+  }
+  .header .nav__inner-buttons .dropdown__content {
+    position: unset;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .header .nav__inner-buttons .dropdown__content.active {
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
   .header .nav.active {
     pointer-events: all;
@@ -3320,7 +3315,6 @@ li {
   .header .burger {
     display: block;
   }
-
   .productInfo__inner-image {
     width: calc(40% - 20px);
     max-width: 300px;
@@ -3359,7 +3353,6 @@ li {
   .productInfoItem p {
     font-size: 13px;
   }
-
   .controls__inner-tools {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -3403,7 +3396,6 @@ li {
     height: 22px;
     margin-right: 8px;
   }
-
   .creatCollection__inner-image {
     width: calc(50% - 10px);
   }
@@ -3454,7 +3446,6 @@ li {
   .creatCollection__form textarea {
     margin-bottom: 6px;
   }
-
   .productDetails__inner-image {
     width: calc(50% - 5px);
   }
@@ -3498,7 +3489,6 @@ li {
     font-size: 26px;
     line-height: 26px;
   }
-
   .tab__inner-column {
     width: calc(50% - 10px);
   }
@@ -3530,7 +3520,6 @@ li {
   .gridNft:nth-child(8) {
     display: none;
   }
-
   .creatCollection__inner {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -3555,7 +3544,6 @@ li {
   .autoContainer {
     padding: 0 15px;
   }
-
   .productInfo__inner {
     padding: 20px 16px 30px;
   }
@@ -3583,12 +3571,10 @@ li {
   .productInfoItem h6 {
     font-size: 12px;
   }
-
   h2 {
     font-size: 28px;
     line-height: 28px;
   }
-
   .productDetails {
     margin-bottom: 0;
   }
@@ -3612,7 +3598,6 @@ li {
     margin: 0 auto;
     padding: 20px 15px 25px;
   }
-
   .tab__inner {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -3668,7 +3653,6 @@ li {
   .productInfoItem h6 {
     font-size: 12px;
   }
-
   .gridProduct {
     width: calc(50% - 10px);
   }
@@ -3688,7 +3672,6 @@ li {
   .gridNft:nth-child(8) {
     display: block;
   }
-
   .controls__inner-filter {
     padding: 15px 20px;
   }
@@ -3720,7 +3703,6 @@ li {
   .input--search input::placeholder {
     font-weight: 400;
   }
-
   .controls__inner-tabs {
     padding: 13px 10px;
   }
@@ -3759,7 +3741,6 @@ li {
     max-width: 21px;
     max-height: 21px;
   }
-
   .gridProduct {
     width: calc(50% - 6px);
   }
@@ -3786,21 +3767,17 @@ li {
   .main {
     padding-top: 70px;
   }
-
   .icon {
     width: 20px;
     height: 20px;
   }
-
   .button--icon {
     width: 22px;
     height: 22px;
   }
-
   .signIn__inner {
     top: 53px;
   }
-
   .header__inner {
     padding: 16px 0 12px;
   }
@@ -3822,12 +3799,10 @@ li {
   .header .burger span, .header .burger:after, .header .burger:before {
     height: 2px;
   }
-
   h2 {
     font-size: 25px;
     line-height: 25px;
   }
-
   .productInfo__inner {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -3886,7 +3861,6 @@ li {
   .controls__inner .dropdown__content {
     z-index: 10;
   }
-
   .gridProduct {
     width: calc(50% - 5px);
   }
@@ -3904,7 +3878,6 @@ li {
   .gridProduct__info .button--border span {
     font-size: 11px;
   }
-
   .creatCollection {
     margin-top: 0;
   }
@@ -3919,7 +3892,6 @@ li {
     font-size: 13px;
     padding: 12px 15px;
   }
-
   .productDetails__inner-image {
     margin-bottom: 15px;
   }
@@ -3967,14 +3939,12 @@ li {
   .autoContainer {
     padding: 0 10px;
   }
-
   .productInfo__inner-image {
     margin-bottom: 20px;
   }
   .productInfoItem {
     width: 100%;
   }
-
   .controls__inner-tabs-button {
     font-size: 11px;
   }
@@ -3988,7 +3958,6 @@ li {
   .controls__inner-filter .button--secondary {
     font-size: 13px;
   }
-
   .gridProduct {
     width: 100%;
     max-width: 260px;
@@ -4007,7 +3976,6 @@ li {
     width: 20px;
     height: 20px;
   }
-
   .creatCollection__inner-image {
     margin: 0 auto 10px;
   }
@@ -4036,11 +4004,9 @@ li {
     height: 18px;
     margin-right: 5px;
   }
-
   .main {
     padding-top: 65px;
   }
-
   .input input {
     font-size: 12px;
     padding: 10px 12px;
@@ -4060,11 +4026,9 @@ li {
   .input input::placeholder {
     font-size: 12px;
   }
-
   .signIn__inner {
     right: 10px;
   }
-
   .tab__inner-column {
     margin-top: 15px;
     width: 100%;

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  padding-top: 110px;
+  padding: 110px 0 60px 0;
   min-height: 100%;
   position: relative;
 }
@@ -67,12 +67,13 @@
     padding: 5px 16px;
     background-color: $blue;
     border-radius: 8px;
-    max-width: 192px;
     cursor: pointer;
     transition: 0.3s linear;
     position: relative;
     border: 1px solid transparent;
     box-sizing: border-box;
+    min-width: 195px;
+
     &:hover {
       border-color: $primary;
     }
@@ -89,7 +90,7 @@
         object-fit: contain;
       }
       &.arrow {
-        margin: 0 0 0 44px;
+        margin: 0 0 0 auto;
         transition: 0.2s linear;
       }
     }
@@ -309,6 +310,8 @@
     background-size: 200% 100%;
     background-position: 50%;
     transition: 0.3s ease-out;
+    font-weight: 700;
+
     &:hover {
       opacity: 0.8;
       background-position: 80%;
@@ -850,7 +853,7 @@
       }
     }
   }
-  &.active{
+  &.active {
     display: block;
   }
 }
@@ -884,7 +887,7 @@
     }
   }
 }
-@mixin components-1025{
+@mixin components-1025 {
   .signIn {
     &__inner {
       top: 77px;
@@ -968,7 +971,6 @@
       font-size: 24px;
     }
   }
-  
 }
 @mixin components-768 {
   .button {
