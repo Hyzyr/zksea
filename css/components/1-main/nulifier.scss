@@ -1,5 +1,9 @@
 html {
   scroll-behavior: smooth;
+  height: 100%;
+}
+:root {
+  height: 100%;
 }
 * {
   margin: 0px;
@@ -55,11 +59,11 @@ body {
   -moz-font-smoothing: antialiased;
   background: $black;
   position: relative;
+  height: 100%;
 }
 body.active {
   overflow: hidden;
 }
-
 
 a {
   cursor: pointer;

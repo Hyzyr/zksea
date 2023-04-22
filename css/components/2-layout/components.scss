@@ -3,6 +3,7 @@
   flex-direction: column;
   overflow: hidden;
   padding-top: 108px;
+  min-height: 100%;
 }
 .autoContainer {
   width: 100%;
@@ -479,7 +480,6 @@
       background: $blue;
       border: 1px solid $blue;
       transition: 0.2s ease;
-
 
       color: $white;
       background: $blue;
