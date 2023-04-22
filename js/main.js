@@ -29,8 +29,4 @@ if (header)
     }
   });
 
-const from = document.querySelector(".creatCollection__inner-form");
 
-from.addEventListener("click", (e) => {
-  e.preventDefault();
-});
