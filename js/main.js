@@ -59,7 +59,6 @@ const dropdowns = document.querySelectorAll(".dropdown");
 dropdowns.forEach((dropdown) => {
   const dropdownContent = dropdown.querySelector(".dropdown__content");
   const dropdownButton = dropdown.querySelector(".dropdown__button");
-  dropdownGet(dropdown);
   dropdown.onclick = () => {
     if (dropdownContent.classList.contains("active")) {
       dropdownContent.classList.remove("active");
