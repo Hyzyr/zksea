@@ -373,7 +373,7 @@ li {
       -ms-flex-direction: column;
           flex-direction: column;
   overflow: hidden;
-  padding-top: 110px;
+  padding: 110px 0 60px 0;
   min-height: 100%;
   position: relative;
 }
@@ -449,7 +449,6 @@ li {
   padding: 5px 16px;
   background-color: #240c3d;
   border-radius: 8px;
-  max-width: 192px;
   cursor: pointer;
   -webkit-transition: 0.3s linear;
   transition: 0.3s linear;
@@ -457,6 +456,7 @@ li {
   border: 1px solid transparent;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  min-width: 195px;
 }
 .dropdown__button:hover {
   border-color: #baff00;
@@ -482,7 +482,7 @@ li {
      object-fit: contain;
 }
 .dropdown__button span.arrow {
-  margin: 0 0 0 44px;
+  margin: 0 0 0 auto;
   -webkit-transition: 0.2s linear;
   transition: 0.2s linear;
 }
@@ -728,6 +728,7 @@ li {
   background-position: 50%;
   -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
+  font-weight: 700;
 }
 .button--primary:hover {
   opacity: 0.8;
@@ -3329,18 +3330,21 @@ li {
         -ms-flex-direction: column;
             flex-direction: column;
     margin-right: 0;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     width: 100%;
+    gap: 10px;
+    margin-bottom: 20px;
   }
   .header .nav__inner-links a {
-    margin: 0 0 30px 0;
+    margin: 0;
+    padding: 5px 0;
     font-size: 14px;
-    line-height: 14px;
+    line-height: 1.2;
   }
   .header .nav__inner-buttons {
     -webkit-box-orient: vertical;
@@ -3355,8 +3359,21 @@ li {
         -ms-flex-pack: center;
             justify-content: center;
   }
+  .header .nav__inner-buttons .button--primary {
+    width: 100%;
+  }
   .header .nav__inner-buttons .dropdown {
+    width: 100%;
     margin: 0 0 30px 0;
+  }
+  .header .nav__inner-buttons .dropdown__content {
+    position: unset;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .header .nav__inner-buttons .dropdown__content.active {
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
   .header .nav.active {
     pointer-events: all;
