@@ -529,6 +529,17 @@ li {
   left: 0;
   background: #120c18;
 }
+.dropdown__content-items {
+  cursor: pointer;
+}
+.dropdown__content-item h6 {
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+.dropdown__content-item P {
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
 .dropdown__content-item-body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -564,46 +575,6 @@ li {
   left: 0;
   border-radius: 8px;
   z-index: -1;
-}
-.dropdown__content p {
-  font-size: 14px;
-  font-weight: 400;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 8px;
-  cursor: pointer;
-  -webkit-transition: 0.2s linear;
-  transition: 0.2s linear;
-}
-.dropdown__content p:hover {
-  opacity: 0.8;
-}
-.dropdown__content p span {
-  width: 24px;
-  height: 24px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-right: 8px;
-}
-.dropdown__content p span img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-.dropdown__content p:last-child {
-  margin-bottom: 0;
 }
 .dropdown__content.active {
   max-height: 400px;
@@ -668,18 +639,60 @@ li {
 }
 .dropdown.big .dropdown__content-item {
   margin-bottom: 15px;
-}
-.dropdown.big .dropdown__content-item-body {
-  margin-bottom: 6px;
-}
-.dropdown.big .dropdown__content-item-body span {
-  margin-right: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
 }
 .dropdown.big .dropdown__content-item:last-child {
   margin-bottom: 0;
 }
+.dropdown.big .dropdown__content-item-body {
+  cursor: pointer;
+}
+.dropdown.big .dropdown__content-item-body:hover h6 {
+  color: #baff00;
+}
+.dropdown.big .dropdown__content-item-body span {
+  padding-right: 5px;
+}
 .dropdown.big .dropdown__content p {
-  font-size: 8px;
+  font-size: 13px;
+  line-height: 13px;
+  cursor: pointer;
+}
+.dropdown.big .dropdown__content p:hover {
+  color: #baff00;
+}
+.dropdownItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 8px;
+}
+.dropdownItem:last-child {
+  margin-bottom: 0;
+}
+.dropdownItem .icon {
+  margin-right: 5px;
+}
+.dropdownItem h6 {
+  font-weight: 400;
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+  cursor: pointer;
+}
+.dropdownItem h6:hover {
+  color: #baff00;
 }
 
 .button {
@@ -815,6 +828,9 @@ li {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.button--icon:hover {
+  opacity: 0.7;
 }
 
 .icon {
@@ -1467,7 +1483,7 @@ li {
      object-fit: contain;
 }
 .header__inner-logo:hover {
-  opacity: 0.8;
+  opacity: 0.7;
 }
 .header__inner-buttons {
   display: -webkit-box;
@@ -1531,6 +1547,7 @@ li {
   padding: 16px 19px;
   font-size: 14px;
   letter-spacing: 0.3px;
+  font-weight: 400;
 }
 .header .dropdown {
   margin-right: 26px;
@@ -1605,6 +1622,9 @@ li {
           animation-duration: 0.3s;
 }
 
+.grid {
+  padding-bottom: 20px;
+}
 .grid__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2836,6 +2856,7 @@ li {
 }
 .productDetailsInfo__row .button--border {
   margin-right: 1px;
+  background: #120c18;
 }
 .productDetailsInfo__row .button--border span {
   background: -webkit-gradient(linear, left top, right top, from(#baff00), to(#06ffcc));
@@ -2844,6 +2865,7 @@ li {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+  line-height: 18px;
 }
 .productDetailsInfo__row .button--border:after, .productDetailsInfo__row .button--border:before {
   border-radius: 8px;
@@ -2865,6 +2887,9 @@ li {
   margin-bottom: 10px;
 }
 
+.tab {
+  padding-bottom: 50px;
+}
 .tab__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3096,6 +3121,9 @@ li {
   .controls__inner-tools {
     padding: 20px 15px;
   }
+  .controls__inner-tools-filter {
+    width: calc(60% - 5px);
+  }
 
   .gridProduct {
     width: calc(25% - 10px);
@@ -3181,6 +3209,10 @@ li {
     font-size: 12px;
     line-height: 12px;
   }
+  .dropdown.big .dropdown__content p {
+    font-size: 12px;
+    line-height: 12px;
+  }
   .input input {
     padding: 12px 14px;
     font-size: 14px;
@@ -3221,6 +3253,23 @@ li {
   }
   .input--search input {
     padding: 10px 15px;
+    font-size: 12px;
+    line-height: 12px;
+  }
+  .input--search input::-webkit-input-placeholder {
+    font-size: 12px;
+  }
+  .input--search input::-moz-placeholder {
+    font-size: 12px;
+  }
+  .input--search input:-ms-input-placeholder {
+    font-size: 12px;
+  }
+  .input--search input::-ms-input-placeholder {
+    font-size: 12px;
+  }
+  .input--search input::placeholder {
+    font-size: 12px;
   }
 
   .signIn__inner {
@@ -3494,6 +3543,9 @@ li {
     line-height: 14px;
     padding: 12px 20px;
   }
+  .productDetailsInfo__row .button--border span {
+    line-height: 16px;
+  }
   .productDetails h2 {
     font-size: 26px;
     line-height: 26px;
@@ -3620,8 +3672,9 @@ li {
             flex-direction: column;
   }
   .tab__inner-column {
-    margin-top: 15px;
     width: 100%;
+    max-width: 550px;
+    margin: 15px auto 0;
   }
   .tab__inner-column:first-child {
     width: 100%;
@@ -3630,9 +3683,15 @@ li {
     font-size: 14px;
     line-height: 14px;
   }
+  .tabItem__contents-item {
+    border: none;
+  }
   .tabItem__contents-item p {
     font-size: 13px;
     line-height: 13px;
+  }
+  .tabItem__contents-item.active {
+    border: 1px solid #240c3d;
   }
 }
 @media (max-width: 680px) {
@@ -3958,6 +4017,9 @@ li {
     line-height: 13px;
     padding: 10px;
   }
+  .productDetailsInfo__row .button--border span {
+    line-height: 15px;
+  }
   .productDetails h2 {
     font-size: 24px;
     line-height: 24px;
@@ -4063,6 +4125,15 @@ li {
 
   .signIn__inner {
     right: 10px;
+  }
+
+  .dropdown.big .dropdown__content h6 {
+    font-size: 11px;
+    line-height: 11px;
+  }
+  .dropdown.big .dropdown__content p {
+    font-size: 11px;
+    line-height: 11px;
   }
 
   .tab__inner-column {

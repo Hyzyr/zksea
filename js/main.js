@@ -70,7 +70,6 @@ dropdowns.forEach((dropdown) => {
   };
 });
 
-
 const signIn = document.querySelector(".signIn");
 const signInClose = document.querySelector(".signIn__inner-header-close");
 signInClose.onclick = () => {

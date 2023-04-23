@@ -560,6 +560,9 @@
       }
       &-tools {
         padding: 20px 15px;
+        &-filter {
+          width: calc(60% - 5px);
+        }
       }
     }
   }
