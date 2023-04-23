@@ -1623,9 +1623,6 @@ li {
           animation-duration: 0.3s;
 }
 
-.grid {
-  padding-bottom: 20px;
-}
 .grid__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2888,9 +2885,6 @@ li {
   margin-bottom: 10px;
 }
 
-.tab {
-  padding-bottom: 50px;
-}
 .tab__inner {
   display: -webkit-box;
   display: -ms-flexbox;
