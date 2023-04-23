@@ -251,7 +251,6 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-fill-color: transparent;
-            line-height: 18px;
           }
           &:after,
           &:before {
@@ -341,11 +340,6 @@
           font-size: 14px;
           line-height: 14px;
           padding: 12px 20px;
-          &--border {
-            span {
-              line-height: 16px;
-            }
-          }
         }
       }
     }

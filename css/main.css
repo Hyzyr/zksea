@@ -2863,7 +2863,6 @@ li {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-  line-height: 18px;
 }
 .productDetailsInfo__row .button--border:after, .productDetailsInfo__row .button--border:before {
   border-radius: 8px;
@@ -3553,9 +3552,6 @@ li {
     font-size: 14px;
     line-height: 14px;
     padding: 12px 20px;
-  }
-  .productDetailsInfo__row .button--border span {
-    line-height: 16px;
   }
   .productDetails h2 {
     font-size: 26px;
