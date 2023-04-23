@@ -59,6 +59,36 @@
             transform: scale(1);
   }
 }
+@-webkit-keyframes zoomInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(20%) scale(0.9);
+            transform: translateY(20%) scale(0.9);
+  }
+  30% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0) scale(0.9);
+            transform: translateY(0) scale(0.9);
+  }
+}
+@keyframes zoomInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(20%) scale(0.9);
+            transform: translateY(20%) scale(0.9);
+  }
+  30% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0) scale(0.9);
+            transform: translateY(0) scale(0.9);
+  }
+}
 @-webkit-keyframes fadeInUp {
   from {
     opacity: 0;
@@ -81,6 +111,54 @@
     opacity: 1;
     -webkit-transform: translateY(0);
             transform: translateY(0);
+  }
+}
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(25%, 0, 0);
+    transform: translate3d(25%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(25%, 0, 0);
+    transform: translate3d(25%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-25%, 0, 0);
+    transform: translate3d(-25%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-25%, 0, 0);
+    transform: translate3d(-25%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
 }
 @-webkit-keyframes sticky {
@@ -1657,6 +1735,18 @@ li {
   background: -webkit-gradient(linear, left top, right top, color-stop(-95.48%, rgba(186, 255, 0, 0.19)), color-stop(4.52%, rgba(6, 255, 204, 0.28)));
   background: linear-gradient(90deg, rgba(186, 255, 0, 0.19) -95.48%, rgba(6, 255, 204, 0.28) 4.52%);
   border-radius: 8px;
+  z-index: -3;
+}
+.gridProduct::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: #0e0c0e;
+  border-radius: 8px;
   z-index: -1;
 }
 .gridProduct__image {
@@ -1764,6 +1854,18 @@ li {
   z-index: 1;
   background: -webkit-gradient(linear, left top, right top, from(rgba(186, 255, 0, 0.19)), to(rgba(6, 255, 204, 0.28)));
   background: linear-gradient(90deg, rgba(186, 255, 0, 0.19) 0%, rgba(6, 255, 204, 0.28) 100%);
+  border-radius: 8px;
+  z-index: -2;
+}
+.gridNft::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: #151315;
   border-radius: 8px;
   z-index: -1;
 }

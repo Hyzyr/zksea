@@ -16,20 +16,23 @@
     <header class="header" id="header">
       <div class="autoContainer">
         <div class="header__inner">
-          <a href="./index.html" class="header__inner-logo">
-            <img src="./images/icons/logo.svg" alt="" />
+          <a href="./index.html" class="header__inner-logo wow fadeInUp" data-wow-duration=".3s" data-wow-delay=".1s">
+            <img src="./images/icons/logo.svg" alt="">
           </a>
           <nav class="nav" id="menu">
             <div class="nav__inner">
               <div class="nav__inner-links">
-                <a href="./index.html">NFTs</a>
-                <a href="./myNfts.html">My NFTs</a>
-                <a href="./createCollection.html" class="active">Create</a>
-                <a href="./collection.html">Collections</a>
-                <a href="#">My collection</a>
+                <a href="./index.html" class="wow fadeInUp" data-wow-duration=".3s" data-wow-delay=".14s">NFTs</a>
+                <a href="./myNfts.html" class="wow fadeInUp" data-wow-duration=".3s" data-wow-delay=".17s">My
+                  NFTs</a>
+                <a href="./createCollection.html" class="active wow fadeInUp" data-wow-duration=".3s"
+                  data-wow-delay=".2s">Create</a>
+                <a href="./collection.html" class="wow fadeInUp" data-wow-duration=".3s"
+                  data-wow-delay=".24s">Collections</a>
+                <a href="#" class="wow fadeInUp" data-wow-duration=".3s" data-wow-delay=".27s">My collection</a>
               </div>
               <div class="nav__inner-buttons">
-                <div class="dropdown">
+                <div class="dropdown wow fadeInUp" data-wow-duration=".3s" data-wow-delay=".3s">
                   <div class="dropdown__button">
                     <span>
                       <img src="./images/icons/starkNet.svg" alt="">
@@ -84,11 +87,13 @@
                     </div>
                   </div>
                 </div>
-                <button class="button--primary">Connect Wallet</button>
+                <button class=" button--primary wow fadeInUp" data-wow-duration=".3s" data-wow-delay=".37s">
+                  Connect Wallet
+                </button>
               </div>
             </div>
           </nav>
-          <div class="burger" id="menuBtn">
+          <div class="burger wow fadeInUp" id="menuBtn" data-wow-duration=".3s" data-wow-delay=".2s">
             <span></span>
           </div>
         </div>
@@ -100,19 +105,19 @@
     <section class="creatCollection">
       <div class="autoContainer">
         <div class="creatCollection__inner">
-          <div class="creatCollection__inner-image">
+          <div class="creatCollection__inner-image wow fadeIn data-wow-duration=" .3s" data-wow-delay=".1s">
             <div class="ratioImage">
               <img src="./images/cartProduct.png" alt="" />
             </div>
           </div>
           <form class="creatCollection__form">
-            <div class="creatCollection__form-row">
+            <div class="creatCollection__form-row wow fadeInUp" data-wow-duration=".3s" data-wow-delay=".14s">
               <button class="button--primary">Create Collection</button>
               <button class="button--border">
                 <span> Collection Details </span>
               </button>
             </div>
-            <div class="creatCollection__form-file">
+            <div class="creatCollection__form-file wow fadeInUp" data-wow-duration=".3s" data-wow-delay=".17s">
               <h5>File type supported: JPG,JPEG,PNG,GIF</h5>
               <div class="creatCollection__form-file-input">
                 <input type="file" name="sd" id="" />
@@ -120,13 +125,13 @@
                 <p>Choose a file</p>
               </div>
             </div>
-            <div class="input">
+            <div class="input wow fadeInUp" data-wow-duration=".3s" data-wow-delay=".2s">
               <input type="text" placeholder="Collection Name" />
             </div>
-            <div class="input input--textarea">
+            <div class="input input--textarea wow fadeInUp" data-wow-duration=".3s" data-wow-delay=".24s">
               <textarea placeholder="Description"></textarea>
             </div>
-            <div class="creatCollection__form-row ">
+            <div class="creatCollection__form-row  wow fadeInUp" data-wow-duration=".3s" data-wow-delay=".27s">
               <div class="input">
                 <input type="text" placeholder="Display Name" />
               </div>
@@ -134,7 +139,8 @@
                 <input type="text" placeholder="Website" />
               </div>
             </div>
-            <button class="button--primary ">Create Collection</button>
+            <button class="button--primary wow fadeInUp" data-wow-duration=".3s" data-wow-delay=".3s">Create
+              Collection</button>
           </form>
         </div>
       </div>
@@ -150,7 +156,7 @@
     <!-- #signIn start -->
     <div class="signIn">
       <div class="autoContainer">
-        <div class="signIn__inner">
+        <div class="signIn__inner wow fadeInRight" data-wow-duration=".3s" data-wow-delay=".2s">
           <div class="signIn__inner-header">
             <div class="signIn__inner-header-avatar">
               <span>
@@ -283,10 +289,13 @@
         </div>
       </div>
     </div>
+    <!-- #signIn end -->
 
   </div>
+  <script src="js/jquery.js"></script>
+  <script src="js/wow.js"></script>
   <script src="js/main.js"></script>
-    <!-- Svg start -->
+  <!-- Svg start -->
   <svg style="display: none">
     <symbol id="discord" viewBox="0 0 20 20">
       <g>
@@ -466,7 +475,7 @@
       </g>
     </symbol>
   </svg>
-    <!-- Svg end --> 
+  <!-- Svg end -->
 </body>
 
 </html>
